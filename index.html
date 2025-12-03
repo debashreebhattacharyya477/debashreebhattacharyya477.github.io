@@ -4,102 +4,242 @@
   <meta charset="UTF-8" />
   <title>Debashree Bhattacharyya | HR Business Partner</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+
   <style>
+    :root {
+      --primary: #0b1f33;
+      --accent: #d97757;
+      --bg: #f4f5fb;
+      --text: #1f2933;
+      --muted: #6b7280;
+      --card: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f5f7;
-      color: #222;
+      font-family: "Lato", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
     }
 
     /* Top navigation */
     header {
-      background: #12324a;
+      background: var(--primary);
       color: #fff;
       padding: 16px 40px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
-    }
-    header .logo {
-      font-weight: bold;
-      font-size: 20px;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin-left: 16px;
-      font-size: 14px;
-    }
-    nav a:hover {
-      text-decoration: underline;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
-    /* Page layout */
-    .hero {
-      max-width: 900px;
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 22px;
+      letter-spacing: 0.03em;
+    }
+
+    nav a {
+      color: #e5e7eb;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+    }
+
+    /* Hero section */
+    .hero-wrapper {
+      max-width: 1000px;
       margin: 40px auto 20px;
       padding: 0 16px;
-    }
-    .hero h1 {
-      font-size: 32px;
-      margin-bottom: 8px;
-      color: #12324a;
-    }
-    .hero h2 {
-      font-size: 18px;
-      font-weight: normal;
-      color: #34495e;
-    }
-    .hero p {
-      margin-top: 12px;
-      line-height: 1.6;
+      display: grid;
+      gap: 24px;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
     }
 
+    @media (max-width: 800px) {
+      .hero-wrapper {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .hero {
+      padding-right: 12px;
+    }
+
+    .hero-kicker {
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 32px;
+      margin: 0 0 8px;
+      color: var(--primary);
+    }
+
+    .hero-subtitle {
+      font-size: 16px;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      line-height: 1.7;
+      margin: 0 0 12px;
+    }
+
+    .hero-highlight {
+      font-weight: 600;
+    }
+
+    .tag-row {
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(11, 31, 51, 0.15);
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    /* Side card */
+    .side-card {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 20px;
+      box-shadow: 0 18px 35px rgba(15, 23, 42, 0.14);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+    }
+
+    .side-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .side-value {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .side-value strong {
+      color: var(--primary);
+    }
+
+    .contact-link {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-size: 13px;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .contact-link:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    /* Cards area */
     .cards {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 10px auto 40px;
       padding: 0 16px 40px;
       display: grid;
-      gap: 16px;
+      gap: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     }
+
     .card {
-      background: #fff;
-      border-radius: 8px;
-      padding: 20px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      background: var(--card);
+      border-radius: 14px;
+      padding: 20px 20px 18px;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+      border: 1px solid rgba(148, 163, 184, 0.35);
     }
+
     .card h3 {
       margin-top: 0;
-      color: #12324a;
-      font-size: 18px;
+      font-size: 17px;
+      color: var(--primary);
+      font-family: "Playfair Display", serif;
     }
+
+    .card p {
+      font-size: 14px;
+      margin: 6px 0 8px;
+      color: var(--muted);
+    }
+
     ul {
       padding-left: 18px;
-      margin: 8px 0 0;
+      margin: 6px 0 0;
+      font-size: 14px;
     }
+
+    li + li {
+      margin-top: 4px;
+    }
+
+    .card a.button-link {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 7px 14px;
+      font-size: 13px;
+      border-radius: 999px;
+      border: 1px solid var(--primary);
+      text-decoration: none;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .card a.button-link:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
     footer {
       text-align: center;
-      padding: 16px;
+      padding: 14px;
       font-size: 12px;
-      color: #666;
-      border-top: 1px solid #ddd;
-      background: #fafafa;
-    }
-    a.button-link {
-      display: inline-block;
-      margin-top: 8px;
-      padding: 8px 14px;
-      font-size: 14px;
-      border-radius: 999px;
-      border: 1px solid #12324a;
-      text-decoration: none;
-      color: #12324a;
-    }
-    a.button-link:hover {
-      background: #12324a;
-      color: #fff;
+      color: var(--muted);
+      border-top: 1px solid rgba(148, 163, 184, 0.4);
+      background: #f9fafb;
     }
   </style>
 </head>
@@ -113,52 +253,88 @@
     </nav>
   </header>
 
-  <section class="hero">
-    <h1>HR Business Partner & Global HR Operations</h1>
-    <h2>Strategic people management across India, USA &amp; Canada</h2>
-    <p>
-      I partner with business leaders to build scalable, people-first organizations.
-      My experience spans end-to-end HR operations, talent acquisition, HRMS
-      implementation, payroll (India, US &amp; Canada), and designing policies that
-      balance compliance with employee experience.
-    </p>
+  <section class="hero-wrapper">
+    <div class="hero">
+      <div class="hero-kicker">HR Business Partner · People & Culture</div>
+      <h1>Strategic HR Partner for Growing & Global Teams</h1>
+      <div class="hero-subtitle">
+        India · USA · Canada · Early-stage & scaling organisations
+      </div>
+      <p>
+        I partner with founders and business leaders to design
+        <span class="hero-highlight">practical, people-first HR systems</span>
+        that support scale, compliance and culture.
+      </p>
+      <p>
+        My experience spans end-to-end HR operations, global payroll, HRMS implementation,
+        leadership hiring and building employee experiences that actually work in real life,
+        not just on paper.
+      </p>
+
+      <div class="tag-row">
+        <span class="tag">HR Business Partnering</span>
+        <span class="tag">Global HR Operations</span>
+        <span class="tag">Payroll · India / US / Canada</span>
+        <span class="tag">HRMS &amp; Automation</span>
+      </div>
+    </div>
+
+    <aside class="side-card">
+      <div class="side-label">Current Focus</div>
+      <div class="side-value">
+        HR Business Partnering · People Operations · HR Transformation Projects
+      </div>
+
+      <div class="side-label">Open To</div>
+      <div class="side-value">
+        Senior HRBP / People Ops roles · Consulting assignments · Remote & hybrid opportunities.
+      </div>
+
+      <div class="side-label">Contact</div>
+      <div class="side-value">
+        📧 <strong>your.email@example.com</strong><br />
+        🔗 <a href="https://www.linkedin.com" target="_blank">LinkedIn Profile</a>
+      </div>
+
+      <a class="contact-link" href="contact.html">Let’s talk</a>
+    </aside>
   </section>
 
   <section class="cards">
-    <div class="card">
-      <h3>What I Focus On</h3>
+    <article class="card">
+      <h3>People &amp; HR Strategy</h3>
+      <p>Translating business goals into pragmatic people plans.</p>
       <ul>
-        <li>End-to-end HR operations &amp; employee lifecycle management</li>
-        <li>Global payroll coordination (India, USA &amp; Canada)</li>
-        <li>HRMS implementation &amp; process automation (Zoho, ADP, etc.)</li>
-        <li>Talent acquisition for tech &amp; non-tech roles</li>
-        <li>Employee engagement, onboarding &amp; retention</li>
+        <li>Partner with leadership on organisation design &amp; workforce planning.</li>
+        <li>Design HR policies and frameworks that balance compliance and flexibility.</li>
+        <li>Coach managers on performance, feedback and difficult conversations.</li>
       </ul>
-      <a class="button-link" href="experience.html">View detailed experience →</a>
-    </div>
+    </article>
 
-    <div class="card">
-      <h3>Highlights</h3>
+    <article class="card">
+      <h3>Global HR Operations &amp; Payroll</h3>
+      <p>Stable, compliant operations for distributed teams.</p>
       <ul>
-        <li>Implemented Zoho People HRMS to digitize HR processes</li>
-        <li>Managed HR &amp; payroll for India, US and Canada entities</li>
-        <li>Designed onboarding journeys for remote &amp; onsite teams</li>
-        <li>Worked with early-stage startups and growing organizations</li>
+        <li>Own end-to-end HR operations across India, US &amp; Canada.</li>
+        <li>Manage payroll and statutory compliance with partners like ADP &amp; local vendors.</li>
+        <li>Standardise processes for onboarding, exits and employee lifecycle.</li>
       </ul>
-    </div>
+      <a class="button-link" href="experience.html">See roles &amp; impact</a>
+    </article>
 
-    <div class="card">
-      <h3>Let’s Connect</h3>
-      <p>
-        Open to opportunities in HR Business Partnering, People Operations,
-        and HR transformation projects across global locations.
-      </p>
-      <a class="button-link" href="contact.html">Contact me →</a>
-    </div>
+    <article class="card">
+      <h3>HR Technology &amp; Enablement</h3>
+      <p>Using tools to reduce manual work and improve visibility.</p>
+      <ul>
+        <li>Led Zoho People implementation from requirements to go-live.</li>
+        <li>Set up workflows, approvals and automation across HR processes.</li>
+        <li>Train managers and employees to adopt tools confidently.</li>
+      </ul>
+    </article>
   </section>
 
   <footer>
-    © <span id="year"></span> Debashree Bhattacharyya · HR Business Partner
+    © <span id="year"></span> Debashree Bhattacharyya · HR Business Partner &amp; People Operations
   </footer>
 
   <script>
