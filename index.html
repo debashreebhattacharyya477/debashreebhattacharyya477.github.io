@@ -2,381 +2,366 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Selected HR Projects | Debashree Bhattacharyya</title>
+  <title>Debashree Bhattacharyya | HR Business Partner</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --primary: #111827;   /* deep grey for text/headings */
-      --accent: #fb6b5b;    /* coral accent */
-      --bg: #f9fafb;        /* soft grey background */
-      --card: #ffffff;      /* white cards */
-      --muted: #6b7280;     /* muted text */
-      --border: #e5e7eb;    /* light border */
+      --bg: #f5f5f7;
+      --text-main: #111827;
+      --text-muted: #6b7280;
+      --accent: #ff6b6b; /* coral */
+      --accent-soft: rgba(255, 107, 107, 0.35);
+      --card-bg: rgba(17, 24, 39, 0.75);
     }
 
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
-      font-family: "Lato", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: var(--bg);
-      color: var(--primary);
+      color: var(--text-main);
       line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
 
     a {
+      text-decoration: none;
       color: inherit;
     }
 
-    /* Header / Nav - same style as index */
-    header {
-      background: #ffffff;
-      border-bottom: 1px solid var(--border);
-      padding: 10px 20px;
+    /* Top nav */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 20;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      flex-wrap: wrap;
-      position: sticky;
-      top: 0;
-      z-index: 20;
+      padding: 0.9rem 6vw;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(
+        to bottom,
+        rgba(15, 23, 42, 0.8),
+        rgba(15, 23, 42, 0.4),
+        transparent
+      );
+      color: #f9fafb;
     }
 
-    .logo {
-      font-family: "Playfair Display", serif;
-      font-size: 20px;
-      letter-spacing: 0.04em;
-      margin-bottom: 2px;
-    }
-
-    .logo-sub {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--muted);
-    }
-
-    nav {
-      display: flex;
-      gap: 16px;
-      align-items: center;
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: var(--muted);
-      padding-bottom: 3px;
-      border-bottom: 2px solid transparent;
-    }
-
-    nav a:hover {
-      color: var(--accent);
-      border-bottom-color: var(--accent);
-    }
-
-    /* Layout */
-    .page {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 24px 16px 40px;
-    }
-
-    section {
-      margin-bottom: 40px;
-    }
-
-    .section-label {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
-
-    .section-title {
-      font-family: "Playfair Display", serif;
-      font-size: 26px;
-      color: var(--primary);
-      margin: 0 0 10px;
-    }
-
-    .section-intro {
-      font-size: 14px;
-      color: var(--muted);
-      max-width: 640px;
-      margin: 0 0 18px;
-    }
-
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 16px;
-    }
-
-    .pill {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      padding: 4px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: #ffffff;
-      color: var(--muted);
-    }
-
-    /* Project cards */
-    .project-grid {
-      display: grid;
-      gap: 18px;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    }
-
-    .project-card {
-      background: var(--card);
-      border-radius: 14px;
-      padding: 18px 18px 16px;
-      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
-      border: 1px solid var(--border);
-    }
-
-    .project-tag {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--accent);
-      margin-bottom: 4px;
-    }
-
-    .project-title {
-      font-family: "Playfair Display", serif;
-      font-size: 18px;
-      margin: 0 0 6px;
-      color: var(--primary);
-    }
-
-    .project-context {
-      font-size: 13px;
-      color: var(--muted);
-      margin: 0 0 8px;
-    }
-
-    .project-list-title {
-      font-size: 13px;
+    .nav-brand {
       font-weight: 600;
-      margin: 8px 0 4px;
-      color: var(--primary);
+      letter-spacing: 0.04em;
     }
 
-    .project-card ul {
-      margin: 0;
-      padding-left: 18px;
-      font-size: 14px;
-      color: var(--primary);
+    .nav-brand span {
+      font-weight: 300;
+      font-size: 0.8rem;
+      opacity: 0.9;
     }
 
-    .project-card ul li + li {
-      margin-top: 4px;
+    .nav-links {
+      display: flex;
+      gap: 1.25rem;
+      font-size: 0.9rem;
+      opacity: 0.9;
     }
 
-    .project-meta {
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 10px;
+    .nav-links a {
+      position: relative;
     }
 
-    .back-link {
-      display: inline-block;
-      margin-top: 18px;
-      font-size: 13px;
-      text-decoration: none;
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -0.25rem;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.2s ease-out;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 5rem 6vw 4rem;
+      color: #f9fafb;
+      position: relative;
+      isolation: isolate;
+      background-image:
+        linear-gradient(to bottom right,
+          rgba(15, 23, 42, 0.90),
+          rgba(17, 24, 39, 0.85),
+          rgba(255, 107, 107, 0.55)
+        ),
+        url("https://source.unsplash.com/1600x900/?office,minimal");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .hero::after {
+      /* subtle grain / dark overlay at bottom */
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at bottom right,
+        rgba(15, 23, 42, 0.2),
+        transparent 55%);
+      mix-blend-mode: soft-light;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 720px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.20rem 0.65rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-kicker-dot {
+      width: 0.42rem;
+      height: 0.42rem;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow:
+        0 0 0 5px rgba(255, 107, 107, 0.35),
+        0 0 14px rgba(248, 250, 252, 0.7);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 3.4vw + 1.4rem, 3.4rem);
+      line-height: 1.1;
+      margin-bottom: 1.1rem;
+      letter-spacing: 0.01em;
+    }
+
+    .hero h1 span {
       color: var(--accent);
     }
 
-    .back-link:hover {
-      text-decoration: underline;
+    .hero-subtitle {
+      font-size: 1rem;
+      max-width: 34rem;
+      color: #e5e7eb;
+      margin-bottom: 2rem;
     }
 
-    footer {
-      text-align: center;
-      padding: 14px;
-      font-size: 12px;
-      color: var(--muted);
-      border-top: 1px solid var(--border);
-      background: #ffffff;
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2.2rem;
+    }
+
+    .hero-tag {
+      font-size: 0.78rem;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.8);
+      background: rgba(15, 23, 42, 0.75);
+      color: #e5e7eb;
+      backdrop-filter: blur(6px);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      align-items: center;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.7rem 1.45rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out,
+        background 0.15s ease-out, border-color 0.15s ease-out;
+      gap: 0.4rem;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: #f9fafb;
+      color: #111827;
+      box-shadow:
+        0 10px 25px rgba(15, 23, 42, 0.45),
+        0 0 0 1px rgba(15, 23, 42, 0.2);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow:
+        0 16px 35px rgba(15, 23, 42, 0.7),
+        0 0 0 1px rgba(15, 23, 42, 0.3);
+    }
+
+    .btn-ghost {
+      background: rgba(15, 23, 42, 0.75);
+      border-color: rgba(148, 163, 184, 0.8);
+      color: #e5e7eb;
+    }
+
+    .btn-ghost:hover {
+      background: rgba(15, 23, 42, 0.95);
+      transform: translateY(-1px);
+      box-shadow: 0 14px 28px rgba(15, 23, 42, 0.6);
+    }
+
+    .btn-icon {
+      font-size: 1.1rem;
+      transform: translateX(0);
+      transition: transform 0.15s ease-out;
+    }
+
+    .btn-primary:hover .btn-icon,
+    .btn-ghost:hover .btn-icon {
+      transform: translateX(2px);
+    }
+
+    /* Tiny footer band so the page ends nicely */
+    .mini-footer {
+      padding: 1.2rem 6vw 1.4rem;
+      background: #0b1120;
+      color: #9ca3af;
+      font-size: 0.78rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .mini-footer span strong {
+      color: #e5e7eb;
+      font-weight: 500;
+    }
+
+    @media (max-width: 720px) {
+      .hero {
+        padding: 4.5rem 1.5rem 3rem;
+        align-items: flex-end;
+      }
+
+      .nav {
+        padding-inline: 1.5rem;
+      }
+
+      .nav-links {
+        display: none; /* keep nav super simple on mobile */
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero h1 {
+        font-size: 2.1rem;
+      }
+
+      .hero-subtitle {
+        font-size: 0.95rem;
+      }
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <div>
-      <div class="logo">Debashree Bhattacharyya</div>
-      <div class="logo-sub">Senior HR Business Partner · People & Culture</div>
+  <!-- Top Nav -->
+  <header class="nav">
+    <div class="nav-brand">
+      Debashree Bhattacharyya
+      <span>HR Business Partner</span>
     </div>
-    <nav>
+    <nav class="nav-links">
       <a href="index.html">Home</a>
-      <a href="index.html#what-i-do">What I Do</a>
-      <a href="projects.html">Projects</a>
-      <a href="index.html#contact">Contact</a>
+      <a href="about.html">About</a>
+      <a href="mailto:debashreebhattacharyya477@gmail.com">Contact</a>
     </nav>
   </header>
 
-  <main class="page">
-    <section>
-      <div class="section-label">Portfolio</div>
-      <h1 class="section-title">Selected HR Projects</h1>
-      <p class="section-intro">
-        A snapshot of work where I’ve combined HR strategy, operations and technology to solve
-        real problems for growing and distributed teams. Organisation names and timelines
-        are intentionally not mentioned; the focus is on context, approach and impact.
-      </p>
+  <!-- HERO -->
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-kicker">
+          <span class="hero-kicker-dot"></span>
+          Strategic HR • People Partner
+        </div>
 
-      <div class="pill-row">
-        <span class="pill">HR transformation</span>
-        <span class="pill">Digital HR</span>
-        <span class="pill">Global HR operations</span>
-        <span class="pill">Performance & culture</span>
+        <h1>
+          I help teams scale with <span>practical, people-first HR</span>.
+        </h1>
+
+        <p class="hero-subtitle">
+          HR Business Partner specialising in global HR operations, payroll and
+          employee experience across India, the US and Canada.
+        </p>
+
+        <div class="hero-tags">
+          <span class="hero-tag">HRBP & People Strategy</span>
+          <span class="hero-tag">Global HR & Payroll (IN • US • CA)</span>
+          <span class="hero-tag">HRMS & Process Design</span>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn-primary" href="about.html">
+            View my work
+            <span class="btn-icon">↗</span>
+          </a>
+
+          <a class="btn-ghost" href="Debashree_Bhattacharyya_Resume.pdf" target="_blank">
+            Download resume
+            <span class="btn-icon">⬇</span>
+          </a>
+        </div>
       </div>
-
-      <div class="project-grid">
-        <!-- Project 1 -->
-        <article class="project-card">
-          <div class="project-tag">HRMS & DIGITAL HR</div>
-          <h2 class="project-title">End-to-end implementation of HRMS for a growing organisation</h2>
-          <p class="project-context">
-            A mid-sized, fast-scaling organisation needed to move away from scattered spreadsheets
-            and manual approvals into a single, reliable HR system.
-          </p>
-          <div class="project-list-title">What I did</div>
-          <ul>
-            <li>Led requirements gathering across leaders, managers and HR to map “how work really happens”.</li>
-            <li>Designed workflows for core HR processes including onboarding, leave, travel and reimbursements.</li>
-            <li>Configured the HRMS, coordinated UAT and planned a phased rollout with clear ownership.</li>
-            <li>Created simple guides and training for managers and employees to adopt the new system.</li>
-          </ul>
-          <div class="project-list-title">Impact</div>
-          <ul>
-            <li>Significantly reduced manual intervention and follow-ups for routine HR processes.</li>
-            <li>Improved accuracy and visibility of employee data for leaders and HR.</li>
-            <li>Gave managers a single, clear place to approve requests and track their teams.</li>
-          </ul>
-          <div class="project-meta">Keywords: HRMS implementation, change management, process design, automation</div>
-        </article>
-
-        <!-- Project 2 -->
-        <article class="project-card">
-          <div class="project-tag">GLOBAL HR OPERATIONS</div>
-          <h2 class="project-title">Stabilising HR operations across multiple countries</h2>
-          <p class="project-context">
-            A technology organisation with employees across countries needed clearer, more consistent HR
-            operations and payroll practices without losing local nuances.
-          </p>
-          <div class="project-list-title">What I did</div>
-          <ul>
-            <li>Mapped existing HR and payroll processes across locations to identify gaps and overlaps.</li>
-            <li>Standardised core HR workflows while allowing for local policy and legal differences.</li>
-            <li>Coordinated with external partners and internal teams to align cut-offs, approvals and data flows.</li>
-            <li>Set up simple documentation and checklists so day-to-day operations were less person-dependent.</li>
-          </ul>
-          <div class="project-list-title">Impact</div>
-          <ul>
-            <li>Reduced confusion and errors in payroll inputs and HR operations across locations.</li>
-            <li>Improved predictability of HR processes for employees and managers.</li>
-            <li>Provided leadership with clearer visibility into headcount and people metrics.</li>
-          </ul>
-          <div class="project-meta">Keywords: global HR, multi-country payroll, standardisation, operations</div>
-        </article>
-
-        <!-- Project 3 -->
-        <article class="project-card">
-          <div class="project-tag">PERFORMANCE & TALENT</div>
-          <h2 class="project-title">Refreshing performance management for a hybrid team</h2>
-          <p class="project-context">
-            A growing team with mixed onsite and remote roles needed a performance approach that was
-            structured but not heavy, and more aligned to how work was actually delivered.
-          </p>
-          <div class="project-list-title">What I did</div>
-          <ul>
-            <li>Worked with leadership to define what “good performance” looks like in their context.</li>
-            <li>Introduced a simpler goal-setting and review rhythm with clear expectations for managers.</li>
-            <li>Equipped managers with conversation guides and templates for feedback discussions.</li>
-            <li>Built a lightweight process for documenting outcomes and linking them to rewards decisions.</li>
-          </ul>
-          <div class="project-list-title">Impact</div>
-          <ul>
-            <li>More consistent performance conversations across teams and levels.</li>
-            <li>Clearer link between goals, feedback and decisions on growth or rewards.</li>
-            <li>Reduced resistance to the performance cycle because it felt usable and fair.</li>
-          </ul>
-          <div class="project-meta">Keywords: performance management, manager enablement, hybrid teams</div>
-        </article>
-
-        <!-- Project 4 -->
-        <article class="project-card">
-          <div class="project-tag">ONBOARDING & EMPLOYEE EXPERIENCE</div>
-          <h2 class="project-title">Designing a structured onboarding journey</h2>
-          <p class="project-context">
-            New hires were experiencing inconsistent onboarding, leading to confusion, delays and slower integration.
-          </p>
-          <div class="project-list-title">What I did</div>
-          <ul>
-            <li>Mapped the ideal first 30–90 days for new hires across key roles.</li>
-            <li>Defined touchpoints for HR, managers and buddies, with clear ownership.</li>
-            <li>Created standard templates for welcome emails, checklists and feedback collection.</li>
-            <li>Aligned the onboarding flow with HR systems so most steps were trackable.</li>
-          </ul>
-          <div class="project-list-title">Impact</div>
-          <ul>
-            <li>New hires felt clearer about expectations, people and processes.</li>
-            <li>Managers had a simple, repeatable structure instead of starting from scratch each time.</li>
-            <li>Faster time-to-productivity and fewer escalations around “who is doing what”.</li>
-          </ul>
-          <div class="project-meta">Keywords: onboarding, employee experience, process mapping</div>
-        </article>
-
-        <!-- Project 5 -->
-        <article class="project-card">
-          <div class="project-tag">HR ANALYTICS & INSIGHTS</div>
-          <h2 class="project-title">Turning HR data into usable insights for leadership</h2>
-          <p class="project-context">
-            Leadership wanted more than raw HR numbers—they needed patterns, risks and options.
-          </p>
-          <div class="project-list-title">What I did</div>
-          <ul>
-            <li>Consolidated data on headcount, movement, performance and attrition into a simple view.</li>
-            <li>Identified trends and hotspots that required interventions or deeper conversations.</li>
-            <li>Presented insights in plain language, with recommended next steps for leaders and HR.</li>
-            <li>Built a basic rhythm for reviewing people metrics as part of business discussions.</li>
-          </ul>
-          <div class="project-list-title">Impact</div>
-          <ul>
-            <li>Leaders could connect people metrics to business outcomes more easily.</li>
-            <li>HR conversations shifted from reactive firefighting to proactive planning.</li>
-            <li>Better prioritisation of where to focus limited HR time and resources.</li>
-          </ul>
-          <div class="project-meta">Keywords: HR analytics, leadership reporting, decision support</div>
-        </article>
-      </div>
-
-      <a class="back-link" href="index.html">← Back to home</a>
     </section>
   </main>
 
-  <footer>
-    © <span id="year"></span> Debashree Bhattacharyya · Senior HR Business Partner & People Partner
+  <!-- Mini Footer -->
+  <footer class="mini-footer">
+    <span>© <strong>Debashree Bhattacharyya</strong></span>
+    <span>Available for remote / hybrid HRBP & HR Ops roles.</span>
   </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
