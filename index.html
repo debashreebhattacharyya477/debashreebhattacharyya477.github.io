@@ -2,20 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Debashree Bhattacharyya | HR Business Partner</title>
+  <title>Selected HR Projects | Debashree Bhattacharyya</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
 
   <style>
     :root {
-      --primary: #0b1f33;
-      --accent: #d97757;
-      --bg: #f4f5fb;
-      --text: #1f2933;
-      --muted: #6b7280;
-      --card: #ffffff;
+      --primary: #111827;   /* deep grey for text/headings */
+      --accent: #fb6b5b;    /* coral accent */
+      --bg: #f9fafb;        /* soft grey background */
+      --card: #ffffff;      /* white cards */
+      --muted: #6b7280;     /* muted text */
+      --border: #e5e7eb;    /* light border */
     }
 
     * {
@@ -26,211 +26,184 @@
       margin: 0;
       font-family: "Lato", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: var(--bg);
-      color: var(--text);
+      color: var(--primary);
+      line-height: 1.6;
     }
 
-    /* Top navigation */
+    a {
+      color: inherit;
+    }
+
+    /* Header / Nav - same style as index */
     header {
-      background: var(--primary);
-      color: #fff;
-      padding: 16px 40px;
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      padding: 10px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 20;
     }
 
     .logo {
       font-family: "Playfair Display", serif;
-      font-size: 22px;
-      letter-spacing: 0.03em;
+      font-size: 20px;
+      letter-spacing: 0.04em;
+      margin-bottom: 2px;
+    }
+
+    .logo-sub {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+    }
+
+    nav {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
     }
 
     nav a {
-      color: #e5e7eb;
       text-decoration: none;
-      margin-left: 20px;
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
+      color: var(--muted);
+      padding-bottom: 3px;
+      border-bottom: 2px solid transparent;
     }
 
     nav a:hover {
-      color: #ffffff;
-    }
-
-    /* Hero section */
-    .hero-wrapper {
-      max-width: 1000px;
-      margin: 40px auto 20px;
-      padding: 0 16px;
-      display: grid;
-      gap: 24px;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-    }
-
-    @media (max-width: 800px) {
-      .hero-wrapper {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .hero {
-      padding-right: 12px;
-    }
-
-    .hero-kicker {
-      text-transform: uppercase;
-      font-size: 12px;
-      letter-spacing: 0.16em;
       color: var(--accent);
-      font-weight: 700;
+      border-bottom-color: var(--accent);
+    }
+
+    /* Layout */
+    .page {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 24px 16px 40px;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
       margin-bottom: 6px;
     }
 
-    h1 {
+    .section-title {
       font-family: "Playfair Display", serif;
-      font-size: 32px;
-      margin: 0 0 8px;
+      font-size: 26px;
       color: var(--primary);
+      margin: 0 0 10px;
     }
 
-    .hero-subtitle {
-      font-size: 16px;
+    .section-intro {
+      font-size: 14px;
       color: var(--muted);
-      margin-bottom: 16px;
+      max-width: 640px;
+      margin: 0 0 18px;
     }
 
-    .hero p {
-      line-height: 1.7;
-      margin: 0 0 12px;
-    }
-
-    .hero-highlight {
-      font-weight: 600;
-    }
-
-    .tag-row {
-      margin-top: 12px;
+    .pill-row {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
+      margin-bottom: 16px;
     }
 
-    .tag {
+    .pill {
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.12em;
       padding: 4px 10px;
       border-radius: 999px;
-      border: 1px solid rgba(11, 31, 51, 0.15);
-      background: rgba(255, 255, 255, 0.8);
-    }
-
-    /* Side card */
-    .side-card {
-      background: var(--card);
-      border-radius: 14px;
-      padding: 20px;
-      box-shadow: 0 18px 35px rgba(15, 23, 42, 0.14);
-      border: 1px solid rgba(148, 163, 184, 0.3);
-    }
-
-    .side-label {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
+      border: 1px solid var(--border);
+      background: #ffffff;
       color: var(--muted);
-      margin-bottom: 6px;
     }
 
-    .side-value {
-      font-size: 14px;
-      margin-bottom: 10px;
-    }
-
-    .side-value strong {
-      color: var(--primary);
-    }
-
-    .contact-link {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 9px 16px;
-      border-radius: 999px;
-      border: 1px solid var(--accent);
-      color: var(--accent);
-      font-size: 13px;
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-
-    .contact-link:hover {
-      background: var(--accent);
-      color: #fff;
-    }
-
-    /* Cards area */
-    .cards {
-      max-width: 1000px;
-      margin: 10px auto 40px;
-      padding: 0 16px 40px;
+    /* Project cards */
+    .project-grid {
       display: grid;
       gap: 18px;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     }
 
-    .card {
+    .project-card {
       background: var(--card);
       border-radius: 14px;
-      padding: 20px 20px 18px;
-      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
-      border: 1px solid rgba(148, 163, 184, 0.35);
+      padding: 18px 18px 16px;
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
+      border: 1px solid var(--border);
     }
 
-    .card h3 {
-      margin-top: 0;
-      font-size: 17px;
-      color: var(--primary);
+    .project-tag {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+
+    .project-title {
       font-family: "Playfair Display", serif;
+      font-size: 18px;
+      margin: 0 0 6px;
+      color: var(--primary);
     }
 
-    .card p {
-      font-size: 14px;
-      margin: 6px 0 8px;
+    .project-context {
+      font-size: 13px;
       color: var(--muted);
+      margin: 0 0 8px;
     }
 
-    ul {
+    .project-list-title {
+      font-size: 13px;
+      font-weight: 600;
+      margin: 8px 0 4px;
+      color: var(--primary);
+    }
+
+    .project-card ul {
+      margin: 0;
       padding-left: 18px;
-      margin: 6px 0 0;
       font-size: 14px;
+      color: var(--primary);
     }
 
-    li + li {
+    .project-card ul li + li {
       margin-top: 4px;
     }
 
-    .card a.button-link {
-      display: inline-block;
+    .project-meta {
+      font-size: 12px;
+      color: var(--muted);
       margin-top: 10px;
-      padding: 7px 14px;
-      font-size: 13px;
-      border-radius: 999px;
-      border: 1px solid var(--primary);
-      text-decoration: none;
-      color: var(--primary);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
     }
 
-    .card a.button-link:hover {
-      background: var(--primary);
-      color: #fff;
+    .back-link {
+      display: inline-block;
+      margin-top: 18px;
+      font-size: 13px;
+      text-decoration: none;
+      color: var(--accent);
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
     }
 
     footer {
@@ -238,103 +211,168 @@
       padding: 14px;
       font-size: 12px;
       color: var(--muted);
-      border-top: 1px solid rgba(148, 163, 184, 0.4);
-      background: #f9fafb;
+      border-top: 1px solid var(--border);
+      background: #ffffff;
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">Debashree Bhattacharyya</div>
+    <div>
+      <div class="logo">Debashree Bhattacharyya</div>
+      <div class="logo-sub">Senior HR Business Partner · People & Culture</div>
+    </div>
     <nav>
       <a href="index.html">Home</a>
-      <a href="experience.html">Experience</a>
-      <a href="contact.html">Contact</a>
+      <a href="index.html#what-i-do">What I Do</a>
+      <a href="projects.html">Projects</a>
+      <a href="index.html#contact">Contact</a>
     </nav>
   </header>
 
-  <section class="hero-wrapper">
-    <div class="hero">
-      <div class="hero-kicker">HR Business Partner · People & Culture</div>
-      <h1>Strategic HR Partner for Growing & Global Teams</h1>
-      <div class="hero-subtitle">
-        India · USA · Canada · Early-stage & scaling organisations
-      </div>
-      <p>
-        I partner with founders and business leaders to design
-        <span class="hero-highlight">practical, people-first HR systems</span>
-        that support scale, compliance and culture.
-      </p>
-      <p>
-        My experience spans end-to-end HR operations, global payroll, HRMS implementation,
-        leadership hiring and building employee experiences that actually work in real life,
-        not just on paper.
+  <main class="page">
+    <section>
+      <div class="section-label">Portfolio</div>
+      <h1 class="section-title">Selected HR Projects</h1>
+      <p class="section-intro">
+        A snapshot of work where I’ve combined HR strategy, operations and technology to solve
+        real problems for growing and distributed teams. Organisation names and timelines
+        are intentionally not mentioned; the focus is on context, approach and impact.
       </p>
 
-      <div class="tag-row">
-        <span class="tag">HR Business Partnering</span>
-        <span class="tag">Global HR Operations</span>
-        <span class="tag">Payroll · India / US / Canada</span>
-        <span class="tag">HRMS &amp; Automation</span>
-      </div>
-    </div>
-
-    <aside class="side-card">
-      <div class="side-label">Current Focus</div>
-      <div class="side-value">
-        HR Business Partnering · People Operations · HR Transformation Projects
+      <div class="pill-row">
+        <span class="pill">HR transformation</span>
+        <span class="pill">Digital HR</span>
+        <span class="pill">Global HR operations</span>
+        <span class="pill">Performance & culture</span>
       </div>
 
-      <div class="side-label">Open To</div>
-      <div class="side-value">
-        Senior HRBP / People Ops roles · Consulting assignments · Remote & hybrid opportunities.
+      <div class="project-grid">
+        <!-- Project 1 -->
+        <article class="project-card">
+          <div class="project-tag">HRMS & DIGITAL HR</div>
+          <h2 class="project-title">End-to-end implementation of HRMS for a growing organisation</h2>
+          <p class="project-context">
+            A mid-sized, fast-scaling organisation needed to move away from scattered spreadsheets
+            and manual approvals into a single, reliable HR system.
+          </p>
+          <div class="project-list-title">What I did</div>
+          <ul>
+            <li>Led requirements gathering across leaders, managers and HR to map “how work really happens”.</li>
+            <li>Designed workflows for core HR processes including onboarding, leave, travel and reimbursements.</li>
+            <li>Configured the HRMS, coordinated UAT and planned a phased rollout with clear ownership.</li>
+            <li>Created simple guides and training for managers and employees to adopt the new system.</li>
+          </ul>
+          <div class="project-list-title">Impact</div>
+          <ul>
+            <li>Significantly reduced manual intervention and follow-ups for routine HR processes.</li>
+            <li>Improved accuracy and visibility of employee data for leaders and HR.</li>
+            <li>Gave managers a single, clear place to approve requests and track their teams.</li>
+          </ul>
+          <div class="project-meta">Keywords: HRMS implementation, change management, process design, automation</div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card">
+          <div class="project-tag">GLOBAL HR OPERATIONS</div>
+          <h2 class="project-title">Stabilising HR operations across multiple countries</h2>
+          <p class="project-context">
+            A technology organisation with employees across countries needed clearer, more consistent HR
+            operations and payroll practices without losing local nuances.
+          </p>
+          <div class="project-list-title">What I did</div>
+          <ul>
+            <li>Mapped existing HR and payroll processes across locations to identify gaps and overlaps.</li>
+            <li>Standardised core HR workflows while allowing for local policy and legal differences.</li>
+            <li>Coordinated with external partners and internal teams to align cut-offs, approvals and data flows.</li>
+            <li>Set up simple documentation and checklists so day-to-day operations were less person-dependent.</li>
+          </ul>
+          <div class="project-list-title">Impact</div>
+          <ul>
+            <li>Reduced confusion and errors in payroll inputs and HR operations across locations.</li>
+            <li>Improved predictability of HR processes for employees and managers.</li>
+            <li>Provided leadership with clearer visibility into headcount and people metrics.</li>
+          </ul>
+          <div class="project-meta">Keywords: global HR, multi-country payroll, standardisation, operations</div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card">
+          <div class="project-tag">PERFORMANCE & TALENT</div>
+          <h2 class="project-title">Refreshing performance management for a hybrid team</h2>
+          <p class="project-context">
+            A growing team with mixed onsite and remote roles needed a performance approach that was
+            structured but not heavy, and more aligned to how work was actually delivered.
+          </p>
+          <div class="project-list-title">What I did</div>
+          <ul>
+            <li>Worked with leadership to define what “good performance” looks like in their context.</li>
+            <li>Introduced a simpler goal-setting and review rhythm with clear expectations for managers.</li>
+            <li>Equipped managers with conversation guides and templates for feedback discussions.</li>
+            <li>Built a lightweight process for documenting outcomes and linking them to rewards decisions.</li>
+          </ul>
+          <div class="project-list-title">Impact</div>
+          <ul>
+            <li>More consistent performance conversations across teams and levels.</li>
+            <li>Clearer link between goals, feedback and decisions on growth or rewards.</li>
+            <li>Reduced resistance to the performance cycle because it felt usable and fair.</li>
+          </ul>
+          <div class="project-meta">Keywords: performance management, manager enablement, hybrid teams</div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="project-card">
+          <div class="project-tag">ONBOARDING & EMPLOYEE EXPERIENCE</div>
+          <h2 class="project-title">Designing a structured onboarding journey</h2>
+          <p class="project-context">
+            New hires were experiencing inconsistent onboarding, leading to confusion, delays and slower integration.
+          </p>
+          <div class="project-list-title">What I did</div>
+          <ul>
+            <li>Mapped the ideal first 30–90 days for new hires across key roles.</li>
+            <li>Defined touchpoints for HR, managers and buddies, with clear ownership.</li>
+            <li>Created standard templates for welcome emails, checklists and feedback collection.</li>
+            <li>Aligned the onboarding flow with HR systems so most steps were trackable.</li>
+          </ul>
+          <div class="project-list-title">Impact</div>
+          <ul>
+            <li>New hires felt clearer about expectations, people and processes.</li>
+            <li>Managers had a simple, repeatable structure instead of starting from scratch each time.</li>
+            <li>Faster time-to-productivity and fewer escalations around “who is doing what”.</li>
+          </ul>
+          <div class="project-meta">Keywords: onboarding, employee experience, process mapping</div>
+        </article>
+
+        <!-- Project 5 -->
+        <article class="project-card">
+          <div class="project-tag">HR ANALYTICS & INSIGHTS</div>
+          <h2 class="project-title">Turning HR data into usable insights for leadership</h2>
+          <p class="project-context">
+            Leadership wanted more than raw HR numbers—they needed patterns, risks and options.
+          </p>
+          <div class="project-list-title">What I did</div>
+          <ul>
+            <li>Consolidated data on headcount, movement, performance and attrition into a simple view.</li>
+            <li>Identified trends and hotspots that required interventions or deeper conversations.</li>
+            <li>Presented insights in plain language, with recommended next steps for leaders and HR.</li>
+            <li>Built a basic rhythm for reviewing people metrics as part of business discussions.</li>
+          </ul>
+          <div class="project-list-title">Impact</div>
+          <ul>
+            <li>Leaders could connect people metrics to business outcomes more easily.</li>
+            <li>HR conversations shifted from reactive firefighting to proactive planning.</li>
+            <li>Better prioritisation of where to focus limited HR time and resources.</li>
+          </ul>
+          <div class="project-meta">Keywords: HR analytics, leadership reporting, decision support</div>
+        </article>
       </div>
 
-      <div class="side-label">Contact</div>
-      <div class="side-value">
-        📧 <strong>your.email@example.com</strong><br />
-        🔗 <a href="https://www.linkedin.com" target="_blank">LinkedIn Profile</a>
-      </div>
-
-      <a class="contact-link" href="contact.html">Let’s talk</a>
-    </aside>
-  </section>
-
-  <section class="cards">
-    <article class="card">
-      <h3>People &amp; HR Strategy</h3>
-      <p>Translating business goals into pragmatic people plans.</p>
-      <ul>
-        <li>Partner with leadership on organisation design &amp; workforce planning.</li>
-        <li>Design HR policies and frameworks that balance compliance and flexibility.</li>
-        <li>Coach managers on performance, feedback and difficult conversations.</li>
-      </ul>
-    </article>
-
-    <article class="card">
-      <h3>Global HR Operations &amp; Payroll</h3>
-      <p>Stable, compliant operations for distributed teams.</p>
-      <ul>
-        <li>Own end-to-end HR operations across India, US &amp; Canada.</li>
-        <li>Manage payroll and statutory compliance with partners like ADP &amp; local vendors.</li>
-        <li>Standardise processes for onboarding, exits and employee lifecycle.</li>
-      </ul>
-      <a class="button-link" href="experience.html">See roles &amp; impact</a>
-    </article>
-
-    <article class="card">
-      <h3>HR Technology &amp; Enablement</h3>
-      <p>Using tools to reduce manual work and improve visibility.</p>
-      <ul>
-        <li>Led Zoho People implementation from requirements to go-live.</li>
-        <li>Set up workflows, approvals and automation across HR processes.</li>
-        <li>Train managers and employees to adopt tools confidently.</li>
-      </ul>
-    </article>
-  </section>
+      <a class="back-link" href="index.html">← Back to home</a>
+    </section>
+  </main>
 
   <footer>
-    © <span id="year"></span> Debashree Bhattacharyya · HR Business Partner &amp; People Operations
+    © <span id="year"></span> Debashree Bhattacharyya · Senior HR Business Partner & People Partner
   </footer>
 
   <script>
