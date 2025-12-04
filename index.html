@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Optional icons (phone / social) -->
+  <!-- Optional icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
@@ -32,8 +32,7 @@
     }
 
     body {
-      font-family: "Open Sans", system-ui, -apple-system, BlinkMacSystemFont,
-        "Segoe UI", sans-serif;
+      font-family: "Open Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: var(--bg-page);
       color: var(--text-main);
     }
@@ -47,7 +46,7 @@
       list-style: none;
     }
 
-    /* ====== TOP BAR (HEADER) ====== */
+    /* HEADER */
     header {
       background: linear-gradient(to right, var(--blue-dark), var(--blue-light));
       color: #ffffff;
@@ -62,7 +61,6 @@
       justify-content: space-between;
     }
 
-    /* Left: Logo / Brand */
     .logo-area {
       display: flex;
       align-items: center;
@@ -75,11 +73,11 @@
       transform: rotate(45deg);
       border-radius: 4px;
       border: 2px solid #ffffff;
-      background: rgba(255, 255, 255, 0.18);
+      background: rgba(255,255,255,0.18);
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.12);
+      box-shadow: 0 0 0 3px rgba(255,255,255,0.12);
     }
 
     .logo-diamond span {
@@ -96,7 +94,6 @@
       text-transform: uppercase;
     }
 
-    /* Center: Menu */
     nav ul {
       display: flex;
       align-items: center;
@@ -126,7 +123,6 @@
       width: 100%;
     }
 
-    /* Right: Phone + Icons */
     .top-right {
       display: flex;
       align-items: center;
@@ -134,20 +130,7 @@
       font-size: 0.85rem;
     }
 
-    .top-phone {
-      white-space: nowrap;
-      opacity: 0.9;
-    }
-
-    .top-icons {
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
-      font-size: 0.85rem;
-      opacity: 0.9;
-    }
-
-    /* ====== HERO CARD ====== */
+    /* HERO */
     .hero-wrapper {
       max-width: 1170px;
       margin: 1.8rem auto 3rem;
@@ -161,17 +144,15 @@
       position: relative;
     }
 
-    /* We mimic the template: one big image on the right, text on top of blurred left area */
     .hero-inner {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
       min-height: 360px;
     }
 
-    /* Left: text over soft background */
     .hero-text-side {
       position: relative;
-      padding: 3.2rem 3.2rem 3.2rem 3rem;
+      padding: 3.2rem 3.2rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -201,10 +182,6 @@
       margin-bottom: 1.2rem;
     }
 
-    .hero-title span {
-      display: block;
-    }
-
     .hero-subtext {
       font-size: 0.96rem;
       color: var(--text-soft);
@@ -220,24 +197,17 @@
       font-size: 0.9rem;
       font-weight: 600;
       border-radius: 3px;
-      box-shadow: 0 3px 9px rgba(0, 0, 0, 0.25);
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      transition: background 0.15s ease-out, transform 0.12s ease-out,
-        box-shadow 0.12s ease-out;
+      transition: 0.15s ease-out;
     }
 
     .hero-btn:hover {
       background: var(--btn-blue-hover);
       transform: translateY(-1px);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
     }
 
-    /* Right: photo (your picture) */
-    .hero-image-side {
-      position: relative;
-    }
-
+    /* RIGHT IMAGE - UPDATED */
     .hero-image-side img {
       width: 100%;
       height: 100%;
@@ -245,141 +215,80 @@
       display: block;
     }
 
-    /* ====== FOOTER ====== */
     footer {
       text-align: center;
-      padding: 1.5rem 1rem 2rem;
+      padding: 1.5rem;
       font-size: 0.8rem;
-      color: #8a8a8a;
+      color: #888;
     }
 
-    @media (max-width: 980px) {
-      .top-bar {
-        flex-wrap: wrap;
-        row-gap: 0.6rem;
-      }
-
-      nav ul {
-        gap: 1rem;
-        font-size: 0.8rem;
-      }
-
-      .hero-inner {
-        grid-template-columns: 1.1fr 0.9fr;
-      }
-
-      .hero-text-side {
-        padding: 2.3rem 2.4rem;
-      }
-    }
-
-    @media (max-width: 780px) {
+    @media (max-width: 800px) {
       .hero-inner {
         grid-template-columns: 1fr;
       }
-
       .hero-image-side {
-        order: -1; /* image on top on small screens */
-      }
-
-      .hero-text-side {
-        padding: 1.8rem 1.6rem 2.1rem;
-      }
-
-      .hero-title {
-        font-size: 2rem;
-      }
-    }
-
-    @media (max-width: 640px) {
-      nav {
-        display: none; /* hide menu on very small screens */
-      }
-
-      .top-bar {
-        justify-content: space-between;
-      }
-
-      .hero-wrapper {
-        padding: 0 1rem;
+        order: -1;
       }
     }
   </style>
 </head>
+
 <body>
 
-  <!-- ====== HEADER ====== -->
-  <header>
-    <div class="top-bar">
-      <!-- Left: Logo -->
-      <div class="logo-area">
-        <div class="logo-diamond">
-          <span>HR</span>
-        </div>
-        <div class="logo-text">HR Advisor</div>
-      </div>
+<header>
+  <div class="top-bar">
+    <div class="logo-area">
+      <div class="logo-diamond"><span>HR</span></div>
+      <div class="logo-text">HR Advisor</div>
+    </div>
 
-      <!-- Center: Menu -->
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Me</a></li>
-          <li><a href="expertise.html">Expertise</a></li>
-          <li><a href="services.html">Services Offered</a></li>
-          <li><a href="blogs.html">Blogs</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="expertise.html">Expertise</a></li>
+        <li><a href="services.html">Services Offered</a></li>
+        <li><a href="blogs.html">Blogs</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
 
-      <!-- Right: Phone / icons -->
-      <div class="top-right">
-        <div class="top-phone">
-          <i class="fa-solid fa-phone"></i> +91-XXXXXXXXXX
+    <div class="top-right">
+      <i class="fa-solid fa-phone"></i> +91-XXXXXXXXXX
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="hero-wrapper">
+    <div class="hero-card">
+      <div class="hero-inner">
+
+        <div class="hero-text-side">
+          <div class="hero-tagline">Expert Knowledge</div>
+          <h1 class="hero-title">
+            Transforming<br> The Work Place
+          </h1>
+          <p class="hero-subtext">
+            Strategic HR partner focused on building practical, people-first HR systems,
+            global HR operations and meaningful employee experiences.
+          </p>
+          <a href="about.html" class="hero-btn">More Info</a>
         </div>
-        <div class="top-icons">
-          <i class="fab fa-linkedin-in"></i>
-          <i class="fab fa-twitter"></i>
-          <i class="fab fa-facebook-f"></i>
-          <i class="fas fa-search"></i>
+
+        <!-- RIGHT SIDE IMAGE UPDATED TO HR.jpg -->
+        <div class="hero-image-side">
+          <img src="HR.jpg" alt="Human Resources Image">
         </div>
+
       </div>
     </div>
-  </header>
+  </div>
+</main>
 
-  <!-- ====== HERO CARD ====== -->
-  <main>
-    <div class="hero-wrapper">
-      <div class="hero-card">
-        <div class="hero-inner">
-          <!-- Left: Text -->
-          <div class="hero-text-side">
-            <div class="hero-tagline">Expert Knowledge</div>
-            <h1 class="hero-title">
-              <span>Transforming</span>
-              <span>The Work Place</span>
-            </h1>
-            <p class="hero-subtext">
-              Strategic HR partner focused on building practical, people-first
-              HR systems, global HR operations and meaningful employee
-              experiences.
-            </p>
-            <a href="about.html" class="hero-btn">More Info</a>
-          </div>
-
-          <!-- Right: Your Photo -->
-          <div class="hero-image-side">
-            <!-- Make sure Debashree.jpg exists next to this file -->
-            <img src="Debashree.jpg" alt="Debashree Bhattacharyya">
-          </div>
-        </div>
-      </div>
-    </div>
-  </main>
-
-  <!-- ====== FOOTER ====== -->
-  <footer>
-    © Debashree Bhattacharyya | HR Advisor & Business Partner
-  </footer>
+<footer>
+  © Debashree Bhattacharyya | HR Advisor & Business Partner
+</footer>
 
 </body>
 </html>
