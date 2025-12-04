@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Services Offered | Debashree Bhattacharyya</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Open Sans", sans-serif;
+      background: #f3f6fa;
+      color: #222;
+    }
+
+    header {
+      background: linear-gradient(to right, #03578b, #00a5d4);
+      padding: 1rem 2rem;
+      color: #fff;
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header a {
+      color: #fff;
+      margin-left: 1rem;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 2rem auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 6px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      color: #03578b;
+    }
+
+    /* Accordion styling */
+    .accordion-item {
+      border-bottom: 1px solid #ddd;
+      padding: 1rem 0;
+    }
+
+    .accordion-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #0078b8;
+    }
+
+    .accordion-title:hover {
+      color: #03578b;
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      padding-right: 1rem;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    .accordion-content.open {
+      padding-top: 0.7rem;
+      padding-bottom: 0.5rem;
+    }
+
+    .arrow {
+      transition: transform 0.3s ease;
+    }
+
+    .accordion-content.open + .arrow {
+      transform: rotate(180deg);
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div>HR Advisor</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="expertise.html">Expertise</a>
+    <a href="services.html">Services Offered</a>
+    <a href="blogs.html">Blogs</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<div class="container">
+  <h1>Services Offered</h1>
+
+  <!-- Recruitment -->
+  <div class="accordion-item">
+    <div class="accordion-title">
+      Recruitment
+      <span class="arrow">▼</span>
+    </div>
+    <div class="accordion-content">
+      We offer recruitment services focused on highly competent women looking
+      to return to corporate roles, as well as professionals impacted by 
+      organizational restructuring. Our approach supports talent reintegration
+      and aligns skilled individuals with the right opportunities.
+    </div>
+  </div>
+
+  <!-- HR Policy & SOP Implementation -->
+  <div class="accordion-item">
+    <div class="accordion-title">
+      HR Policy & SOP Implementation
+      <span class="arrow">▼</span>
+    </div>
+    <div class="accordion-content">
+      We help organizations build structured and compliant HR policies and SOPs 
+      that promote clarity, consistency, and a strong governance framework. 
+      Our process ensures alignment with legal requirements and organizational culture.
+    </div>
+  </div>
+
+  <!-- HRMS Implementation -->
+  <div class="accordion-item">
+    <div class="accordion-title">
+      HRMS Implementation
+      <span class="arrow">▼</span>
+    </div>
+    <div class="accordion-content">
+      We manage end-to-end HRMS implementation including requirement gathering, 
+      workflow design, configuration, automation, testing, and rollout. We specialize 
+      in helping organizations transition from manual processes to fully digital HR operations.
+    </div>
+  </div>
+
+  <!-- Performance Appraisal & Review -->
+  <div class="accordion-item">
+    <div class="accordion-title">
+      Performance Appraisal & Review
+      <span class="arrow">▼</span>
+    </div>
+    <div class="accordion-content">
+      We design and implement transparent, measurable, and growth-focused performance 
+      management systems. This includes goal-setting frameworks, competency mapping, 
+      review cycles, and feedback mechanisms to enhance employee productivity and engagement.
+    </div>
+  </div>
+
+  <!-- Diversity & Equality Implementation -->
+  <div class="accordion-item">
+    <div class="accordion-title">
+      Diversity & Equality Implementation
+      <span class="arrow">▼</span>
+    </div>
+    <div class="accordion-content">
+      We support organizations in building inclusive workplaces by implementing 
+      diversity, equity, and belonging frameworks. This includes sensitization programs, 
+      policy development, and structured initiatives that promote equal opportunity.
+    </div>
+  </div>
+
+</div>
+
+<script>
+  const items = document.querySelectorAll(".accordion-item");
+
+  items.forEach(item => {
+    const title = item.querySelector(".accordion-title");
+    const content = item.querySelector(".accordion-content");
+    const arrow = item.querySelector(".arrow");
+
+    title.addEventListener("click", () => {
+      const isOpen = content.classList.contains("open");
+
+      // Close all open items
+      document.querySelectorAll(".accordion-content").forEach(c => {
+        c.style.maxHeight = null;
+        c.classList.remove("open");
+      });
+      document.querySelectorAll(".arrow").forEach(a => {
+        a.style.transform = "rotate(0deg)";
+      });
+
+      // Toggle current item
+      if (!isOpen) {
+        content.style.maxHeight = content.scrollHeight + "px";
+        content.classList.add("open");
+        arrow.style.transform = "rotate(180deg)";
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
