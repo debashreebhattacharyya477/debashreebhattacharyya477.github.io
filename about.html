@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Me | Debashree Bhattacharyya</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Open Sans", sans-serif;
+      background: #f3f6fa;
+      color: #222;
+    }
+
+    header {
+      background: linear-gradient(to right, #03578b, #00a5d4);
+      padding: 1rem 2rem;
+      color: #fff;
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header a {
+      color: #fff;
+      margin-left: 1rem;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 2rem auto;
+      background: #fff;
+      padding: 2rem;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+      border-radius: 4px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .about-grid img {
+      width: 100%;
+      border-radius: 4px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    p {
+      line-height: 1.7;
+      font-size: 1rem;
+      color: #444;
+    }
+
+    @media (max-width: 800px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div>HR Advisor</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="expertise.html">Expertise</a>
+    <a href="services.html">Services Offered</a>
+    <a href="blogs.html">Blogs</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<div class="container">
+  <div class="about-grid">
+
+    <!-- LEFT SIDE: PHOTO -->
+    <div>
+      <img src="Debashree.jpg" alt="Debashree Bhattacharyya">
+    </div>
+
+    <!-- RIGHT SIDE: ABOUT ME -->
+    <div>
+      <h1>About Me</h1>
+      <p>
+        Strategic HR Business Partner with experience supporting multi-functional business units across India, US, UK & Canada.
+        Skilled in HR strategy alignment, talent management, performance management, employee relations, workforce planning, 
+        and organizational development.
+      </p>
+      <p>
+        Partnered with business leaders to drive productivity, resolve complex ER issues, lead HR transformation initiatives, 
+        and implement scalable people practices. Strong analytical capability with proven expertise in HR metrics, policy 
+        governance, and employee experience.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
