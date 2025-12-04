@@ -2,504 +2,302 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Debashree Bhattacharyya | Senior HR Business Partner</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Debashree Bhattacharyya | HR Advisor</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <!-- Google Font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  />
 
   <style>
     :root {
-      --primary: #111827;
-      --accent: #fb6b5b;
-      --bg: #f9fafb;
+      --primary: #0077b6;
+      --primary-dark: #005f8d;
+      --bg: #f4f7fb;
       --card: #ffffff;
-      --muted: #6b7280;
-      --border: #e5e7eb;
+      --text: #11223a;
+      --muted: #6b7a90;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
-      margin: 0;
-      font-family: "Lato", system-ui, -apple-system;
+      font-family: "Lato", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
       background: var(--bg);
-      color: var(--primary);
-      line-height: 1.6;
+      color: var(--text);
     }
 
-    /* HEADER */
-    header {
-      background: #ffffff;
-      border-bottom: 1px solid var(--border);
-      padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
+    /* Top bar / nav */
+    .navbar {
       position: sticky;
       top: 0;
-      z-index: 20;
+      z-index: 100;
+      background: #ffffff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     }
 
-    .logo {
-      font-family: "Playfair Display", serif;
-      font-size: 20px;
-    }
-
-    .logo-sub {
-      font-size: 11px;
-      text-transform: uppercase;
-      color: var(--muted);
-      letter-spacing: 0.14em;
-    }
-
-    nav {
+    .nav-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
       display: flex;
-      gap: 16px;
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
       align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
     }
 
-    nav a {
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+
+    .brand-logo {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      border: 2px solid var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
       text-decoration: none;
       color: var(--muted);
-      padding-bottom: 3px;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      padding-bottom: 2px;
       border-bottom: 2px solid transparent;
     }
 
-    nav a:hover {
-      color: var(--accent);
-      border-bottom-color: var(--accent);
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
     }
 
-    /* LAYOUT */
-    .page {
-      max-width: 1080px;
-      margin: auto;
-      padding: 24px 16px 40px;
+    .nav-phone {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--primary);
+      white-space: nowrap;
     }
 
-    .section-label {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--muted);
-      margin-bottom: 6px;
+    /* Hero section */
+    .hero {
+      background: linear-gradient(
+        90deg,
+        #ffffff 0%,
+        #ffffff 55%,
+        #e4f3ff 100%
+      );
+      padding: 3.5rem 1.5rem 3.75rem;
     }
 
-    .section-title {
-      font-family: "Playfair Display", serif;
-      font-size: 24px;
-      margin: 0 0 12px;
-    }
-
-    /* HERO */
-    .hero-grid {
+    .hero-inner {
+      max-width: 1180px;
+      margin: 0 auto;
       display: grid;
-      gap: 24px;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-      margin-top: 20px;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 2.75rem;
+      align-items: center;
     }
 
-    @media (max-width: 900px) {
-      .hero-grid { grid-template-columns: 1fr; }
-    }
-
-    .hero-kicker {
-      font-size: 11px;
+    .hero-eyebrow {
       text-transform: uppercase;
+      font-size: 0.8rem;
       letter-spacing: 0.18em;
-      color: var(--accent);
       font-weight: 700;
-      margin-bottom: 8px;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
     }
 
-    .hero-heading {
-      font-family: "Playfair Display", serif;
-      font-size: 30px;
-      margin: 0 0 8px;
+    .hero-title {
+      font-size: 2.6rem;
+      line-height: 1.15;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
     }
 
     .hero-subtitle {
-      font-size: 15px;
+      font-size: 2rem;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-text {
+      font-size: 0.97rem;
+      line-height: 1.7;
       color: var(--muted);
-      margin-bottom: 14px;
+      max-width: 34rem;
+      margin-bottom: 2rem;
     }
 
-    .hero-tag {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      padding: 4px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: #ffffff;
-      color: var(--muted);
-    }
-
-    .side-card {
-      background: var(--card);
-      border-radius: 14px;
-      padding: 18px;
-      box-shadow: 0 12px 28px rgba(15,23,42,0.08);
-      border: 1px solid var(--border);
-    }
-
-    .btn-solid {
-      background: var(--accent);
-      color: #fff;
-      padding: 8px 16px;
+    .hero-btn {
+      display: inline-block;
+      padding: 0.75rem 1.8rem;
+      background: var(--primary);
+      color: #ffffff;
       border-radius: 999px;
       text-decoration: none;
-      font-size: 12px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .btn-outline {
-      border: 1px solid var(--border);
-      padding: 8px 16px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-size: 12px;
-      color: var(--muted);
+      font-weight: 700;
+      font-size: 0.95rem;
       text-transform: uppercase;
       letter-spacing: 0.12em;
-    }
-
-    /* ACCORDION - Services Offered */
-    .accordion-item {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      box-shadow: 0 8px 18px rgba(15,23,42,0.06);
-      margin-bottom: 10px;
-    }
-
-    .accordion-header {
-      padding: 14px;
-      display: flex;
-      justify-content: space-between;
+      border: none;
       cursor: pointer;
+      box-shadow: 0 10px 20px rgba(0, 119, 182, 0.25);
+      transition: transform 0.15s ease, box-shadow 0.15s ease,
+        background 0.15s ease;
     }
 
-    .accordion-title { font-weight: 600; }
-
-    .accordion-subtitle { color: var(--muted); font-size: 12px; }
-
-    .accordion-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height .2s ease-out;
-      background: #f3f4f6;
-      padding: 0 14px;
+    .hero-btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 14px 26px rgba(0, 119, 182, 0.32);
     }
 
-    .accordion-item.open .accordion-content {
-      padding: 10px 14px 14px;
+    .hero-image-card {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: 0 22px 45px rgba(15, 40, 80, 0.14);
     }
 
-    .card-grid {
-      display: grid;
-      gap: 18px;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    .hero-image-card img {
+      width: 100%;
+      display: block;
+      border-radius: 12px;
     }
 
-    .card {
-      background: #fff;
-      border-radius: 14px;
-      padding: 18px;
-      border: 1px solid var(--border);
-      box-shadow: 0 8px 18px rgba(15,23,42,0.06);
-    }
-
-    footer {
-      padding: 14px;
-      text-align: center;
-      font-size: 12px;
+    .hero-image-caption {
+      margin-top: 0.75rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
       color: var(--muted);
-      border-top: 1px solid var(--border);
-      background: #fff;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    /* Simple footer */
+    footer {
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        background: #ffffff;
+        padding-top: 2.75rem;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-inner {
+        flex-wrap: wrap;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      .hero-title {
+        font-size: 2.2rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.6rem;
+      }
     }
   </style>
 </head>
-
 <body>
-<header>
-  <div>
-    <div class="logo">Debashree Bhattacharyya</div>
-    <div class="logo-sub">Senior HR Business Partner · People & Culture</div>
-  </div>
-
-  <nav>
-    <a href="#about">About</a>
-    <a href="#services">Services Offered</a>
-    <a href="#focus">Focus Areas</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
-
-<main class="page">
-
-  <!-- HERO -->
-  <section id="about">
-    <div class="hero-grid">
-      <div>
-        <div class="hero-kicker">Strategic HR & People Partner</div>
-        <h1 class="hero-heading">Helping organisations scale people, performance & culture.</h1>
-        <div class="hero-subtitle">
-          Partnering with leadership to design practical HR systems across India, US, UK & Canada.
-        </div>
-
-        <p>I work at the intersection of <strong>HR strategy, operations and technology</strong>,
-           building people practices that support growth while staying grounded in compliance and real employee experience.</p>
-
-        <p>My focus areas include HR business partnering, performance and succession,
-           global HR operations, HR tech transformation, and culture-building initiatives.</p>
-
-        <div style="margin-top:12px;">
-          <span class="hero-tag">HR Business Partnering</span>
-          <span class="hero-tag">Global HR Operations</span>
-          <span class="hero-tag">Performance & Talent</span>
-          <span class="hero-tag">HR Technology</span>
-        </div>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="brand-logo">HR</div>
+        <span>HR Advisor</span>
       </div>
 
-      <aside class="side-card">
-        <div>
-          <strong>How I work</strong><br>
-          A balanced mix of structure, empathy and pragmatism — partnering with leaders and teams
-          to build systems that scale without losing human touch.
-        </div>
+      <nav class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="experience.html">Expertise</a>
+        <a href="Services%20Offered.html">Services Offered</a>
+        <a href="#">Blogs</a>
+        <a href="contact.html">Contact</a>
+      </nav>
 
-        <div style="margin-top:12px;">
-          <strong>Typical engagements</strong><br>
-          HR partnering · Process & policy design · HRMS rollout · Performance frameworks
-        </div>
-
-        <div style="margin-top:12px;">
-          <strong>Open to</strong><br>
-          Senior HR roles · HR transformation projects · Fractional HRBP work
-        </div>
-
-        <div style="margin-top:16px;">
-          <a class="btn-solid" href="#services">Explore services</a>
-          <a class="btn-outline" href="#contact">Contact</a>
-        </div>
-      </aside>
+      <div class="nav-phone">
+        +91-XXXXXXXXXX
+      </div>
     </div>
-  </section>
+  </header>
 
-  <!-- SERVICES OFFERED -->
-  <section id="services">
-    <div class="section-label">Services Offered</div>
-    <h2 class="section-title">How I support organisations.</h2>
+  <!-- HERO / HOME SECTION -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <div class="hero-eyebrow">Expert Knowledge</div>
 
-    <div>
-      <!-- Item 1 -->
-      <div class="accordion-item">
-        <div class="accordion-header">
-          <div>
-            <div class="accordion-title">HR Strategy & Business Partnering</div>
-            <div class="accordion-subtitle">Aligning people decisions with business goals.</div>
-          </div>
-          <span>+</span>
-        </div>
+        <h1 class="hero-title">Transforming</h1>
+        <h2 class="hero-subtitle">The Work Place</h2>
 
-        <div class="accordion-content">
-          <ul>
-            <li>Workforce planning, org design & decision support</li>
-            <li>Manager enablement for performance & feedback</li>
-            <li>People insights, risks & leadership advisory</li>
-            <li>Change management guidance & communication</li>
-          </ul>
-        </div>
+        <p class="hero-text">
+          Strategic HR partner focused on building practical, people-first HR
+          systems, global HR operations and meaningful employee experiences.
+        </p>
+
+        <a href="about.html" class="hero-btn">More Info</a>
       </div>
 
-      <!-- Item 2 -->
-      <div class="accordion-item">
-        <div class="accordion-header">
-          <div>
-            <div class="accordion-title">Global HR Operations & Payroll</div>
-            <div class="accordion-subtitle">Creating clarity and consistency.</div>
-          </div>
-          <span>+</span>
-        </div>
-
-        <div class="accordion-content">
-          <ul>
-            <li>Multi-country HR operations setup (India, US, UK, Canada)</li>
-            <li>Policy & process standardisation with local nuance</li>
-            <li>Payroll coordination & accuracy improvement</li>
-            <li>Operational dashboards & compliance workflows</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Item 3 -->
-      <div class="accordion-item">
-        <div class="accordion-header">
-          <div>
-            <div class="accordion-title">Performance, Talent & Culture</div>
-            <div class="accordion-subtitle">Systems that support growth and fairness.</div>
-          </div>
-          <span>+</span>
-        </div>
-
-        <div class="accordion-content">
-          <ul>
-            <li>Simplified performance cycles with clear expectations</li>
-            <li>Talent reviews, succession and capability mapping</li>
-            <li>Employee relations & conflict resolution</li>
-            <li>Engagement programs & culture reinforcement</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Item 4 -->
-      <div class="accordion-item">
-        <div class="accordion-header">
-          <div>
-            <div class="accordion-title">HR Technology & Digital HR</div>
-            <div class="accordion-subtitle">Using tools to enable better HR.</div>
-          </div>
-          <span>+</span>
-        </div>
-
-        <div class="accordion-content">
-          <ul>
-            <li>HRMS implementation (Zoho, ADP, Keka, BambooHR, Multiplier)</li>
-            <li>Workflow & automation design</li>
-            <li>UAT, rollout & adoption support</li>
-            <li>Data interpretation for leadership decision-making</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Item 5 -->
-      <div class="accordion-item">
-        <div class="accordion-header">
-          <div>
-            <div class="accordion-title">Talent Acquisition & Leadership Hiring</div>
-            <div class="accordion-subtitle">Finding the right people, not just resumes.</div>
-          </div>
-          <span>+</span>
-        </div>
-
-        <div class="accordion-content">
-          <ul>
-            <li>Role scoping & capability-based selection</li>
-            <li>Senior and niche hiring partnership</li>
-            <li>Candidate experience and onboarding flow</li>
-            <li>Hiring system optimisation & vendor collaboration</li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- FOCUS AREAS -->
-  <section id="focus">
-    <div class="section-label">Focus Areas</div>
-    <h2 class="section-title">How my work shows up in practice.</h2>
-
-    <div class="card-grid">
-      <div class="card">
-        <h3>Partnering with leadership</h3>
-        <ul>
-          <li>Shaping people decisions using data & context</li>
-          <li>Leadership advisory on sensitive HR issues</li>
-          <li>Structuring rhythms for performance & communication</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>Building scalable HR foundations</h3>
-        <ul>
-          <li>Designing processes that grow with the organisation</li>
-          <li>Clarifying roles, expectations & decision rights</li>
-          <li>Strengthening HR operations & governance</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>Enabling managers & teams</h3>
-        <ul>
-          <li>Manager capability building</li>
-          <li>Facilitating performance & behaviour conversations</li>
-          <li>Driving a fair, calm and consistent employee experience</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>Connecting HR, operations & technology</h3>
-        <ul>
-          <li>Using tools to reduce manual work</li>
-          <li>Building journeys across onboarding to exit</li>
-          <li>Refining systems based on feedback and data</li>
-        </ul>
+      <div class="hero-image-card">
+        <!-- Use your HR illustration file that is already in the repo -->
+        <img src="HR.jpg" alt="Human Resources illustration" />
+        <div class="hero-image-caption">Human Resources · People · Culture</div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="section-label">Contact</div>
-    <h2 class="section-title">Let’s talk about your people agenda.</h2>
-
-    <div class="card-grid">
-      <div class="card">
-        <strong>Email</strong><br>
-        <a href="mailto:your.email@example.com" style="color:var(--accent);">your.email@example.com</a>
-      </div>
-
-      <div class="card">
-        <strong>LinkedIn</strong><br>
-        <a href="https://www.linkedin.com" target="_blank" style="color:var(--accent);">View Profile</a>
-      </div>
-
-      <div class="card">
-        <strong>Based In</strong><br>
-        Hyderabad, India · Supporting global teams
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  © <span id="year"></span> Debashree Bhattacharyya · Senior HR Business Partner
-</footer>
-
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-
-  /* Accordion Logic */
-  const items = document.querySelectorAll(".accordion-item");
-  items.forEach(item => {
-    const header = item.querySelector(".accordion-header");
-    const content = item.querySelector(".accordion-content");
-    const icon = item.querySelector("span:last-child");
-
-    header.onclick = () => {
-      const open = item.classList.contains("open");
-      items.forEach(i => {
-        i.classList.remove("open");
-        i.querySelector(".accordion-content").style.maxHeight = null;
-        i.querySelector("span:last-child").textContent = "+";
-      });
-
-      if (!open) {
-        item.classList.add("open");
-        content.style.maxHeight = content.scrollHeight + "px";
-        icon.textContent = "–";
-      }
-    };
-  });
-</script>
-
+  <footer>
+    ©
+    <script>
+      document.write(new Date().getFullYear());
+    </script>
+    Debashree Bhattacharyya · HR Advisor
+  </footer>
 </body>
 </html>
