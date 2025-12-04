@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Debashree Bhattacharyya | HR Advisor</title>
+  <title>HR Advisor | Debashree Bhattacharyya</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Google Font -->
@@ -10,11 +10,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 
+  <!-- Optional icons (phone / social) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
   <style>
     :root {
-      --blue-top: #0078b8;
-      --blue-top-dark: #03578b;
-      --accent: #00bcd4;
+      --blue-light: #00a5d4;
+      --blue-main: #0078b8;
+      --blue-dark: #03578b;
+      --bg-page: #f3f6fa;
       --text-main: #222222;
       --text-soft: #666666;
       --btn-blue: #0078b8;
@@ -28,8 +32,9 @@
     }
 
     body {
-      font-family: "Open Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #f3f6fa;
+      font-family: "Open Sans", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      background: var(--bg-page);
       color: var(--text-main);
     }
 
@@ -38,51 +43,67 @@
       color: inherit;
     }
 
-    /* TOP STRIP */
+    ul {
+      list-style: none;
+    }
+
+    /* ====== TOP BAR (HEADER) ====== */
     header {
-      background: linear-gradient(to right, var(--blue-top-dark), var(--blue-top));
+      background: linear-gradient(to right, var(--blue-dark), var(--blue-light));
       color: #ffffff;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
 
     .top-bar {
-      max-width: 1100px;
+      max-width: 1170px;
       margin: 0 auto;
-      padding: 0.9rem 1.5rem;
+      padding: 0.9rem 1.8rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
-    .brand {
+    /* Left: Logo / Brand */
+    .logo-area {
       display: flex;
       align-items: center;
       gap: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-size: 0.9rem;
     }
 
-    .brand-logo {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
+    .logo-diamond {
+      width: 34px;
+      height: 34px;
+      transform: rotate(45deg);
+      border-radius: 4px;
       border: 2px solid #ffffff;
+      background: rgba(255, 255, 255, 0.18);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.85rem;
-      font-weight: 700;
-      background: rgba(255,255,255,0.15);
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.12);
     }
 
-    nav {
+    .logo-diamond span {
+      transform: rotate(-45deg);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+    }
+
+    .logo-text {
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* Center: Menu */
+    nav ul {
       display: flex;
       align-items: center;
-      gap: 1.4rem;
+      gap: 1.6rem;
       font-size: 0.9rem;
-      font-weight: 500;
+      font-weight: 600;
+      text-transform: uppercase;
     }
 
     nav a {
@@ -94,196 +115,270 @@
       content: "";
       position: absolute;
       left: 0;
-      bottom: -0.2rem;
+      bottom: -0.15rem;
       width: 0;
       height: 2px;
       background: #ffffff;
-      transition: width 0.2s ease-out;
+      transition: width 0.18s ease-out;
     }
 
     nav a:hover::after {
       width: 100%;
     }
 
-    .contact-number {
+    /* Right: Phone + Icons */
+    .top-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.85rem;
+    }
+
+    .top-phone {
+      white-space: nowrap;
+      opacity: 0.9;
+    }
+
+    .top-icons {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
       font-size: 0.85rem;
       opacity: 0.9;
     }
 
-    /* HERO SECTION */
+    /* ====== HERO CARD ====== */
     .hero-wrapper {
-      max-width: 1100px;
-      margin: 1.5rem auto;
-      padding: 1.5rem;
-      background: #ffffff;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      max-width: 1170px;
+      margin: 1.8rem auto 3rem;
+      padding: 0 1.8rem;
     }
 
-    .hero {
+    .hero-card {
+      background: #ffffff;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* We mimic the template: one big image on the right, text on top of blurred left area */
+    .hero-inner {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
-      gap: 1.5rem;
-      align-items: center;
+      min-height: 360px;
     }
 
-    .hero-text small {
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      font-size: 0.75rem;
+    /* Left: text over soft background */
+    .hero-text-side {
+      position: relative;
+      padding: 3.2rem 3.2rem 3.2rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-image: linear-gradient(
+          to right,
+          rgba(255, 255, 255, 0.9),
+          rgba(255, 255, 255, 0.7)
+        ),
+        url("https://source.unsplash.com/900x600/?office,blur");
+      background-size: cover;
+      background-position: center left;
+    }
+
+    .hero-tagline {
+      color: var(--blue-light);
       font-weight: 600;
-      color: var(--accent);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      margin-bottom: 0.7rem;
     }
 
-    .hero-text h1 {
-      margin-top: 0.6rem;
-      font-size: 2.2rem;
-      line-height: 1.2;
+    .hero-title {
+      font-size: 2.4rem;
+      line-height: 1.15;
       font-weight: 700;
+      margin-bottom: 1.2rem;
     }
 
-    .hero-text p {
-      margin-top: 0.75rem;
-      font-size: 0.95rem;
+    .hero-title span {
+      display: block;
+    }
+
+    .hero-subtext {
+      font-size: 0.96rem;
       color: var(--text-soft);
-      max-width: 26rem;
+      max-width: 23rem;
+      margin-bottom: 1.7rem;
     }
 
-    .hero-cta {
-      margin-top: 1.4rem;
-    }
-
-    .hero-button {
+    .hero-btn {
       display: inline-block;
-      padding: 0.7rem 1.6rem;
+      padding: 0.75rem 1.7rem;
       background: var(--btn-blue);
       color: #ffffff;
       font-size: 0.9rem;
       font-weight: 600;
       border-radius: 3px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+      box-shadow: 0 3px 9px rgba(0, 0, 0, 0.25);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
       transition: background 0.15s ease-out, transform 0.12s ease-out,
         box-shadow 0.12s ease-out;
     }
 
-    .hero-button:hover {
+    .hero-btn:hover {
       background: var(--btn-blue-hover);
       transform: translateY(-1px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
     }
 
-    /* HERO IMAGE */
-    .hero-image-wrap {
-      text-align: right;
+    /* Right: photo (your picture) */
+    .hero-image-side {
+      position: relative;
     }
 
-    .hero-image {
-      max-width: 100%;
-      height: auto;
-      border-radius: 3px;
+    .hero-image-side img {
+      width: 100%;
+      height: 100%;
       object-fit: cover;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+      display: block;
     }
 
-    /* SMALL FOOTER */
+    /* ====== FOOTER ====== */
     footer {
       text-align: center;
       padding: 1.5rem 1rem 2rem;
       font-size: 0.8rem;
-      color: #888888;
+      color: #8a8a8a;
     }
 
-    @media (max-width: 900px) {
-      .hero {
+    @media (max-width: 980px) {
+      .top-bar {
+        flex-wrap: wrap;
+        row-gap: 0.6rem;
+      }
+
+      nav ul {
+        gap: 1rem;
+        font-size: 0.8rem;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1.1fr 0.9fr;
+      }
+
+      .hero-text-side {
+        padding: 2.3rem 2.4rem;
+      }
+    }
+
+    @media (max-width: 780px) {
+      .hero-inner {
         grid-template-columns: 1fr;
       }
 
-      .hero-image-wrap {
-        text-align: center;
+      .hero-image-side {
+        order: -1; /* image on top on small screens */
       }
 
-      .hero-wrapper {
-        margin: 1rem;
+      .hero-text-side {
+        padding: 1.8rem 1.6rem 2.1rem;
       }
 
-      .top-bar {
-        flex-wrap: wrap;
-        gap: 0.8rem;
-      }
-
-      nav {
-        flex-wrap: wrap;
-        justify-content: flex-end;
+      .hero-title {
+        font-size: 2rem;
       }
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 640px) {
       nav {
-        display: none; /* keep top bar clean on very small screens */
+        display: none; /* hide menu on very small screens */
       }
 
-      .hero-text h1 {
-        font-size: 1.8rem;
+      .top-bar {
+        justify-content: space-between;
       }
 
       .hero-wrapper {
-        padding: 1.1rem;
+        padding: 0 1rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- TOP BAR -->
+  <!-- ====== HEADER ====== -->
   <header>
     <div class="top-bar">
-      <div class="brand">
-        <div class="brand-logo">DB</div>
-        <div>HR Advisor</div>
+      <!-- Left: Logo -->
+      <div class="logo-area">
+        <div class="logo-diamond">
+          <span>HR</span>
+        </div>
+        <div class="logo-text">HR Advisor</div>
       </div>
 
+      <!-- Center: Menu -->
       <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About Me</a>
-        <a href="expertise.html">Expertise</a>
-        <a href="services.html">Service Offered</a>
-        <a href="blogs.html">Blogs</a>
-        <a href="contact.html">Contact</a>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Me</a></li>
+          <li><a href="expertise.html">Expertise</a></li>
+          <li><a href="services.html">Services Offered</a></li>
+          <li><a href="blogs.html">Blogs</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
       </nav>
 
-      <div class="contact-number">
-        <!-- you can change this to your real number or email -->
-        ✉︎ debashreebhattacharyya477@gmail.com
+      <!-- Right: Phone / icons -->
+      <div class="top-right">
+        <div class="top-phone">
+          <i class="fa-solid fa-phone"></i> +91-XXXXXXXXXX
+        </div>
+        <div class="top-icons">
+          <i class="fab fa-linkedin-in"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-facebook-f"></i>
+          <i class="fas fa-search"></i>
+        </div>
       </div>
     </div>
   </header>
 
-  <!-- HERO SECTION -->
+  <!-- ====== HERO CARD ====== -->
   <main>
     <div class="hero-wrapper">
-      <section class="hero">
-        <div class="hero-text">
-          <small>Expert HR Partner</small>
-          <h1>Transforming the Workplace with Practical, People-First HR.</h1>
-          <p>
-            I help organisations build scalable HR processes, strengthen employee
-            experience and streamline global HR operations across India and North America.
-          </p>
+      <div class="hero-card">
+        <div class="hero-inner">
+          <!-- Left: Text -->
+          <div class="hero-text-side">
+            <div class="hero-tagline">Expert Knowledge</div>
+            <h1 class="hero-title">
+              <span>Transforming</span>
+              <span>The Work Place</span>
+            </h1>
+            <p class="hero-subtext">
+              Strategic HR partner focused on building practical, people-first
+              HR systems, global HR operations and meaningful employee
+              experiences.
+            </p>
+            <a href="about.html" class="hero-btn">More Info</a>
+          </div>
 
-          <div class="hero-cta">
-            <a href="about.html" class="hero-button">More Info</a>
+          <!-- Right: Your Photo -->
+          <div class="hero-image-side">
+            <!-- Make sure Debashree.jpg exists next to this file -->
+            <img src="Debashree.jpg" alt="Debashree Bhattacharyya">
           </div>
         </div>
-
-        <div class="hero-image-wrap">
-          <!-- Make sure this image file exists in the same folder as index.html -->
-          <img src="Debashree.jpg" alt="Debashree Bhattacharyya" class="hero-image">
-        </div>
-      </section>
+      </div>
     </div>
   </main>
 
+  <!-- ====== FOOTER ====== -->
   <footer>
-    © Debashree Bhattacharyya &nbsp;|&nbsp; HR Business Partner & Advisor
+    © Debashree Bhattacharyya | HR Advisor & Business Partner
   </footer>
 
 </body>
