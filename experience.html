@@ -2,127 +2,316 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Experience | Debashree Bhattacharyya</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Expertise | Debashree Bhattacharyya</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f5f7;
-      color: #222;
+    :root {
+      --primary: #0077b6;
+      --primary-dark: #005f8d;
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --text: #11223a;
+      --muted: #6b7a90;
     }
-    header {
-      background: #12324a;
-      color: #fff;
-      padding: 16px 40px;
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Lato", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    /* NAVBAR */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #ffffff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+    .nav-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      flex-wrap: wrap;
+      gap: 1rem;
     }
-    header .logo { font-weight: bold; font-size: 20px; }
-    nav a {
-      color: #fff;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+    .brand-logo {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      border: 2px solid var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      font-size: 0.9rem;
+    }
+    .nav-links a {
       text-decoration: none;
-      margin-left: 16px;
-      font-size: 14px;
+      color: var(--muted);
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      padding-bottom: 2px;
+      border-bottom: 2px solid transparent;
     }
-    nav a:hover { text-decoration: underline; }
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+    }
+    .nav-phone {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--primary);
+      white-space: nowrap;
+    }
+
+    /* CONTENT */
     main {
-      max-width: 900px;
-      margin: 30px auto 40px;
-      padding: 0 16px;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 3.5rem;
     }
+
+    .page-eyebrow {
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+    }
+
     h1 {
-      color: #12324a;
-      font-size: 26px;
-      margin-bottom: 10px;
+      font-size: 2.2rem;
+      margin-bottom: 0.75rem;
     }
-    h2 {
-      font-size: 18px;
-      margin-bottom: 4px;
-      color: #12324a;
+
+    .lead {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--muted);
+      max-width: 40rem;
+      margin-bottom: 2rem;
     }
-    .role {
-      background: #fff;
-      padding: 18px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-      margin-bottom: 16px;
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
     }
-    .meta {
-      font-size: 13px;
-      color: #555;
-      margin-bottom: 8px;
+
+    .card {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 1.4rem 1.5rem 1.5rem;
+      box-shadow: 0 12px 28px rgba(15, 40, 80, 0.12);
     }
-    ul {
-      margin: 6px 0 0;
-      padding-left: 18px;
+
+    .card h2 {
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
     }
+
+    .card p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-top: 0.4rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(0, 119, 182, 0.05);
+      border: 1px solid rgba(0, 119, 182, 0.25);
+      font-size: 0.75rem;
+      color: var(--primary-dark);
+    }
+
     footer {
+      padding: 1.5rem;
       text-align: center;
-      padding: 16px;
-      font-size: 12px;
-      color: #666;
-      border-top: 1px solid #ddd;
-      background: #fafafa;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 960px) {
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-inner {
+        flex-wrap: wrap;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+      .grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo">Debashree Bhattacharyya</div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="experience.html">Experience</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="brand-logo">HR</div>
+        <span>HR Advisor</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="experience.html" class="active">Expertise</a>
+        <a href="Services%20Offered.html">Services Offered</a>
+        <a href="#">Blogs</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-phone">
+        +91-XXXXXXXXXX
+      </div>
+    </div>
   </header>
 
+  <!-- CONTENT -->
   <main>
-    <h1>Professional Experience</h1>
+    <div class="page-eyebrow">Expertise</div>
+    <h1>What I Bring to the Table</h1>
 
-    <section class="role">
-      <h2>HR Business Partner &amp; HR Operations Lead</h2>
-      <div class="meta">Nextech AR Solutions · India, USA &amp; Canada</div>
-      <ul>
-        <li>Managed end-to-end HR operations and payroll for India, US and Canada entities using ADP and local systems.</li>
-        <li>Partnered with leadership on headcount planning, org changes, and people-related decisions.</li>
-        <li>Designed onboarding journeys and HR processes for remote and hybrid teams.</li>
-        <li>Handled employee lifecycle: hiring, onboarding, confirmations, transfers, exits and documentation.</li>
-        <li>Ensured compliance with local labour laws and internal policies.</li>
-      </ul>
-    </section>
+    <p class="lead">
+      My work spans strategic HR business partnering, HR operations, payroll
+      management and HR technology implementation. I am comfortable moving
+      between strategy and execution and partnering with leaders to solve real
+      people problems.
+    </p>
 
-    <section class="role">
-      <h2>HR Generalist &amp; Talent Acquisition</h2>
-      <div class="meta">Startup &amp; Training Organisations · India &amp; US-based companies</div>
-      <ul>
-        <li>Owned recruitment for IT &amp; non-IT roles through LinkedIn and job portals.</li>
-        <li>Designed and delivered employee engagement and training initiatives.</li>
-        <li>Implemented a low-cost LMS to streamline public training programs.</li>
-        <li>Conducted PoSH and EHS trainings as a qualified internal trainer.</li>
-      </ul>
-    </section>
+    <div class="grid">
+      <article class="card">
+        <h2>Strategic HR Business Partnering</h2>
+        <p>
+          Partnering with business leaders to translate goals into people plans:
+          workforce planning, org structure, role clarity and capability
+          requirements.
+        </p>
+        <p>
+          Acting as a sounding board to managers on performance, team dynamics
+          and talent decisions.
+        </p>
+        <span class="tag">People Strategy</span>
+      </article>
 
-    <section class="role">
-      <h2>HRMS / Zoho People Implementation</h2>
-      <div class="meta">HR Transformation Project</div>
-      <ul>
-        <li>Led end-to-end implementation of Zoho People as the primary HRMS.</li>
-        <li>Gathered requirements, configured modules, set up workflows and automation.</li>
-        <li>Migrated employee data, tested processes and trained end users.</li>
-        <li>Reduced manual work and improved accuracy of HR records and approvals.</li>
-      </ul>
-    </section>
+      <article class="card">
+        <h2>Global HR Operations</h2>
+        <p>
+          Managing end-to-end HR operations across locations – employee
+          lifecycle, documentation, leaves, benefits and HR data accuracy.
+        </p>
+        <p>
+          Experience working with distributed teams across India, the US and
+          Canada.
+        </p>
+        <span class="tag">Scalable Processes</span>
+      </article>
+
+      <article class="card">
+        <h2>Payroll Management</h2>
+        <p>
+          Hands-on experience with payroll for multiple geographies, ensuring
+          compliance with local statutory requirements and accurate, timely
+          payouts.
+        </p>
+        <p>Comfortable working with payroll vendors &amp; platforms.</p>
+        <span class="tag">India · US · Canada</span>
+      </article>
+
+      <article class="card">
+        <h2>HR Systems &amp; Automation</h2>
+        <p>
+          Implementing and optimising HRMS / HCM platforms to streamline
+          onboarding, workflows, approvals and employee data management.
+        </p>
+        <p>
+          Focused on reducing manual work and improving data visibility for
+          HR and leaders.
+        </p>
+        <span class="tag">HRMS Implementation</span>
+      </article>
+
+      <article class="card">
+        <h2>Talent Acquisition &amp; Onboarding</h2>
+        <p>
+          Experience across full recruitment lifecycle, from sourcing and
+          screening to selection and offer closure for diverse roles and levels.
+        </p>
+        <p>
+          Designed structured onboarding journeys that create positive first
+          impressions and faster productivity.
+        </p>
+        <span class="tag">Hiring &amp; Onboarding</span>
+      </article>
+
+      <article class="card">
+        <h2>Policy, Compliance &amp; Employee Relations</h2>
+        <p>
+          Designing clear HR policies, employee handbooks and SOPs that balance
+          compliance with practicality.
+        </p>
+        <p>
+          Supporting managers and employees on day-to-day queries, grievance
+          handling and culture-building practices.
+        </p>
+        <span class="tag">Policies &amp; SOPs</span>
+      </article>
+    </div>
   </main>
 
   <footer>
-    © <span id="year"></span> Debashree Bhattacharyya · HR Business Partner
+    ©
+    <script>
+      document.write(new Date().getFullYear());
+    </script>
+    Debashree Bhattacharyya · HR Advisor
   </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
