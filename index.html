@@ -2,20 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Debashree Bhattacharyya | HR Business Partner</title>
+  <title>Debashree Bhattacharyya | HR Advisor</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #f5f5f7;
-      --text-main: #111827;
-      --text-muted: #6b7280;
-      --accent: #ff6b6b; /* coral */
-      --accent-soft: rgba(255, 107, 107, 0.35);
-      --card-bg: rgba(17, 24, 39, 0.75);
+      --blue-top: #0078b8;
+      --blue-top-dark: #03578b;
+      --accent: #00bcd4;
+      --text-main: #222222;
+      --text-soft: #666666;
+      --btn-blue: #0078b8;
+      --btn-blue-hover: #03578b;
     }
 
     * {
@@ -25,11 +28,9 @@
     }
 
     body {
-      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
+      font-family: "Open Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f3f6fa;
       color: var(--text-main);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
     }
 
     a {
@@ -37,331 +38,253 @@
       color: inherit;
     }
 
-    /* Top nav */
-    .nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 20;
+    /* TOP STRIP */
+    header {
+      background: linear-gradient(to right, var(--blue-top-dark), var(--blue-top));
+      color: #ffffff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .top-bar {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.9rem 1.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0.9rem 6vw;
-      backdrop-filter: blur(14px);
-      background: linear-gradient(
-        to bottom,
-        rgba(15, 23, 42, 0.8),
-        rgba(15, 23, 42, 0.4),
-        transparent
-      );
-      color: #f9fafb;
     }
 
-    .nav-brand {
-      font-weight: 600;
-      letter-spacing: 0.04em;
-    }
-
-    .nav-brand span {
-      font-weight: 300;
-      font-size: 0.8rem;
-      opacity: 0.9;
-    }
-
-    .nav-links {
+    .brand {
       display: flex;
-      gap: 1.25rem;
+      align-items: center;
+      gap: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
       font-size: 0.9rem;
-      opacity: 0.9;
     }
 
-    .nav-links a {
+    .brand-logo {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 2px solid #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      background: rgba(255,255,255,0.15);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1.4rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    nav a {
       position: relative;
+      padding-bottom: 0.15rem;
     }
 
-    .nav-links a::after {
+    nav a::after {
       content: "";
       position: absolute;
       left: 0;
-      bottom: -0.25rem;
+      bottom: -0.2rem;
       width: 0;
       height: 2px;
-      background: var(--accent);
+      background: #ffffff;
       transition: width 0.2s ease-out;
     }
 
-    .nav-links a:hover::after {
+    nav a:hover::after {
       width: 100%;
     }
 
-    /* HERO */
+    .contact-number {
+      font-size: 0.85rem;
+      opacity: 0.9;
+    }
+
+    /* HERO SECTION */
+    .hero-wrapper {
+      max-width: 1100px;
+      margin: 1.5rem auto;
+      padding: 1.5rem;
+      background: #ffffff;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+
     .hero {
-      min-height: 100vh;
-      display: flex;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 1.5rem;
       align-items: center;
-      padding: 5rem 6vw 4rem;
-      color: #f9fafb;
-      position: relative;
-      isolation: isolate;
-      background-image:
-        linear-gradient(to bottom right,
-          rgba(15, 23, 42, 0.90),
-          rgba(17, 24, 39, 0.85),
-          rgba(255, 107, 107, 0.55)
-        ),
-        url("https://source.unsplash.com/1600x900/?office,minimal");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
     }
 
-    .hero::after {
-      /* subtle grain / dark overlay at bottom */
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at bottom right,
-        rgba(15, 23, 42, 0.2),
-        transparent 55%);
-      mix-blend-mode: soft-light;
-      pointer-events: none;
-    }
-
-    .hero-inner {
-      max-width: 720px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.20rem 0.65rem;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.75);
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
+    .hero-text small {
       text-transform: uppercase;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-kicker-dot {
-      width: 0.42rem;
-      height: 0.42rem;
-      border-radius: 999px;
-      background: var(--accent);
-      box-shadow:
-        0 0 0 5px rgba(255, 107, 107, 0.35),
-        0 0 14px rgba(248, 250, 252, 0.7);
-    }
-
-    .hero h1 {
-      font-size: clamp(2.4rem, 3.4vw + 1.4rem, 3.4rem);
-      line-height: 1.1;
-      margin-bottom: 1.1rem;
-      letter-spacing: 0.01em;
-    }
-
-    .hero h1 span {
+      letter-spacing: 0.16em;
+      font-size: 0.75rem;
+      font-weight: 600;
       color: var(--accent);
     }
 
-    .hero-subtitle {
-      font-size: 1rem;
-      max-width: 34rem;
-      color: #e5e7eb;
-      margin-bottom: 2rem;
+    .hero-text h1 {
+      margin-top: 0.6rem;
+      font-size: 2.2rem;
+      line-height: 1.2;
+      font-weight: 700;
     }
 
-    .hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 2.2rem;
+    .hero-text p {
+      margin-top: 0.75rem;
+      font-size: 0.95rem;
+      color: var(--text-soft);
+      max-width: 26rem;
     }
 
-    .hero-tag {
-      font-size: 0.78rem;
-      padding: 0.35rem 0.7rem;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.8);
-      background: rgba(15, 23, 42, 0.75);
-      color: #e5e7eb;
-      backdrop-filter: blur(6px);
+    .hero-cta {
+      margin-top: 1.4rem;
     }
 
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.9rem;
-      align-items: center;
-    }
-
-    .btn-primary,
-    .btn-ghost {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.7rem 1.45rem;
-      border-radius: 999px;
+    .hero-button {
+      display: inline-block;
+      padding: 0.7rem 1.6rem;
+      background: var(--btn-blue);
+      color: #ffffff;
       font-size: 0.9rem;
-      font-weight: 500;
-      border: 1px solid transparent;
-      cursor: pointer;
-      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out,
-        background 0.15s ease-out, border-color 0.15s ease-out;
-      gap: 0.4rem;
-      text-decoration: none;
-      white-space: nowrap;
+      font-weight: 600;
+      border-radius: 3px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+      transition: background 0.15s ease-out, transform 0.12s ease-out,
+        box-shadow 0.12s ease-out;
     }
 
-    .btn-primary {
-      background: #f9fafb;
-      color: #111827;
-      box-shadow:
-        0 10px 25px rgba(15, 23, 42, 0.45),
-        0 0 0 1px rgba(15, 23, 42, 0.2);
-    }
-
-    .btn-primary:hover {
+    .hero-button:hover {
+      background: var(--btn-blue-hover);
       transform: translateY(-1px);
-      box-shadow:
-        0 16px 35px rgba(15, 23, 42, 0.7),
-        0 0 0 1px rgba(15, 23, 42, 0.3);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.3);
     }
 
-    .btn-ghost {
-      background: rgba(15, 23, 42, 0.75);
-      border-color: rgba(148, 163, 184, 0.8);
-      color: #e5e7eb;
+    /* HERO IMAGE */
+    .hero-image-wrap {
+      text-align: right;
     }
 
-    .btn-ghost:hover {
-      background: rgba(15, 23, 42, 0.95);
-      transform: translateY(-1px);
-      box-shadow: 0 14px 28px rgba(15, 23, 42, 0.6);
+    .hero-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 3px;
+      object-fit: cover;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.25);
     }
 
-    .btn-icon {
-      font-size: 1.1rem;
-      transform: translateX(0);
-      transition: transform 0.15s ease-out;
+    /* SMALL FOOTER */
+    footer {
+      text-align: center;
+      padding: 1.5rem 1rem 2rem;
+      font-size: 0.8rem;
+      color: #888888;
     }
 
-    .btn-primary:hover .btn-icon,
-    .btn-ghost:hover .btn-icon {
-      transform: translateX(2px);
-    }
-
-    /* Tiny footer band so the page ends nicely */
-    .mini-footer {
-      padding: 1.2rem 6vw 1.4rem;
-      background: #0b1120;
-      color: #9ca3af;
-      font-size: 0.78rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-    }
-
-    .mini-footer span strong {
-      color: #e5e7eb;
-      font-weight: 500;
-    }
-
-    @media (max-width: 720px) {
+    @media (max-width: 900px) {
       .hero {
-        padding: 4.5rem 1.5rem 3rem;
-        align-items: flex-end;
+        grid-template-columns: 1fr;
       }
 
-      .nav {
-        padding-inline: 1.5rem;
+      .hero-image-wrap {
+        text-align: center;
       }
 
-      .nav-links {
-        display: none; /* keep nav super simple on mobile */
+      .hero-wrapper {
+        margin: 1rem;
       }
 
-      .hero-actions {
-        flex-direction: column;
-        align-items: flex-start;
+      .top-bar {
+        flex-wrap: wrap;
+        gap: 0.8rem;
       }
 
-      .hero h1 {
-        font-size: 2.1rem;
+      nav {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        display: none; /* keep top bar clean on very small screens */
       }
 
-      .hero-subtitle {
-        font-size: 0.95rem;
+      .hero-text h1 {
+        font-size: 1.8rem;
+      }
+
+      .hero-wrapper {
+        padding: 1.1rem;
       }
     }
   </style>
 </head>
-
 <body>
-  <!-- Top Nav -->
-  <header class="nav">
-    <div class="nav-brand">
-      Debashree Bhattacharyya
-      <span>HR Business Partner</span>
+
+  <!-- TOP BAR -->
+  <header>
+    <div class="top-bar">
+      <div class="brand">
+        <div class="brand-logo">DB</div>
+        <div>HR Advisor</div>
+      </div>
+
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="expertise.html">Expertise</a>
+        <a href="services.html">Service Offered</a>
+        <a href="blogs.html">Blogs</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="contact-number">
+        <!-- you can change this to your real number or email -->
+        ✉︎ debashreebhattacharyya477@gmail.com
+      </div>
     </div>
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="mailto:debashreebhattacharyya477@gmail.com">Contact</a>
-    </nav>
   </header>
 
-  <!-- HERO -->
+  <!-- HERO SECTION -->
   <main>
-    <section class="hero">
-      <div class="hero-inner">
-        <div class="hero-kicker">
-          <span class="hero-kicker-dot"></span>
-          Strategic HR • People Partner
+    <div class="hero-wrapper">
+      <section class="hero">
+        <div class="hero-text">
+          <small>Expert HR Partner</small>
+          <h1>Transforming the Workplace with Practical, People-First HR.</h1>
+          <p>
+            I help organisations build scalable HR processes, strengthen employee
+            experience and streamline global HR operations across India and North America.
+          </p>
+
+          <div class="hero-cta">
+            <a href="about.html" class="hero-button">More Info</a>
+          </div>
         </div>
 
-        <h1>
-          I help teams scale with <span>practical, people-first HR</span>.
-        </h1>
-
-        <p class="hero-subtitle">
-          HR Business Partner specialising in global HR operations, payroll and
-          employee experience across India, the US and Canada.
-        </p>
-
-        <div class="hero-tags">
-          <span class="hero-tag">HRBP & People Strategy</span>
-          <span class="hero-tag">Global HR & Payroll (IN • US • CA)</span>
-          <span class="hero-tag">HRMS & Process Design</span>
+        <div class="hero-image-wrap">
+          <!-- Make sure this image file exists in the same folder as index.html -->
+          <img src="Debashree.jpg" alt="Debashree Bhattacharyya" class="hero-image">
         </div>
-
-        <div class="hero-actions">
-          <a class="btn-primary" href="about.html">
-            View my work
-            <span class="btn-icon">↗</span>
-          </a>
-
-          <a class="btn-ghost" href="Debashree_Bhattacharyya_Resume.pdf" target="_blank">
-            Download resume
-            <span class="btn-icon">⬇</span>
-          </a>
-        </div>
-      </div>
-    </section>
+      </section>
+    </div>
   </main>
 
-  <!-- Mini Footer -->
-  <footer class="mini-footer">
-    <span>© <strong>Debashree Bhattacharyya</strong></span>
-    <span>Available for remote / hybrid HRBP & HR Ops roles.</span>
+  <footer>
+    © Debashree Bhattacharyya &nbsp;|&nbsp; HR Business Partner & Advisor
   </footer>
+
 </body>
 </html>
