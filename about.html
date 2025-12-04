@@ -1,120 +1,304 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Me | Debashree Bhattacharyya</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  />
 
   <style>
-    body {
+    :root {
+      --primary: #0077b6;
+      --primary-dark: #005f8d;
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --text: #11223a;
+      --muted: #6b7a90;
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
-      font-family: "Open Sans", sans-serif;
-      background: #f3f6fa;
-      color: #222;
+      padding: 0;
     }
 
-    header {
-      background: linear-gradient(to right, #03578b, #00a5d4);
-      padding: 1rem 2rem;
-      color: #fff;
-      font-weight: 700;
+    body {
+      font-family: "Lato", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    /* NAVBAR */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #ffffff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+    .nav-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
     }
-
-    header a {
-      color: #fff;
-      margin-left: 1rem;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+    .brand-logo {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      border: 2px solid var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      font-size: 0.9rem;
+    }
+    .nav-links a {
       text-decoration: none;
+      color: var(--muted);
+      text-transform: uppercase;
       font-weight: 600;
+      letter-spacing: 0.08em;
+      padding-bottom: 2px;
+      border-bottom: 2px solid transparent;
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+    }
+    .nav-phone {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--primary);
+      white-space: nowrap;
     }
 
-    .container {
-      max-width: 1100px;
-      margin: 2rem auto;
-      background: #fff;
-      padding: 2rem;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
-      border-radius: 4px;
-    }
-
-    .about-grid {
+    /* PAGE LAYOUT */
+    main {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 3.5rem;
       display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 2rem;
-      align-items: start;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 2.5rem;
+      align-items: flex-start;
     }
 
-    .about-grid img {
-      width: 100%;
-      border-radius: 4px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+    .page-eyebrow {
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
     }
 
     h1 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      font-weight: 700;
+      font-size: 2.2rem;
+      margin-bottom: 0.75rem;
     }
 
-    p {
-      line-height: 1.7;
+    .lead {
       font-size: 1rem;
-      color: #444;
+      line-height: 1.7;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
     }
 
-    @media (max-width: 800px) {
-      .about-grid {
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-bottom: 2rem;
+    }
+
+    .pill {
+      padding: 0.35rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid rgba(0, 119, 182, 0.2);
+      font-size: 0.8rem;
+      color: var(--primary-dark);
+      background: rgba(0, 119, 182, 0.04);
+    }
+
+    .section-title {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-text {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 1.5rem 1.75rem;
+      box-shadow: 0 16px 32px rgba(15, 40, 80, 0.12);
+    }
+
+    .card h2 {
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .card ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .card li {
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+      position: relative;
+      padding-left: 1.15rem;
+    }
+
+    .card li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--primary);
+    }
+
+    footer {
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 900px) {
+      main {
         grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 720px) {
+      .nav-inner {
+        flex-wrap: wrap;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: flex-end;
       }
     }
   </style>
 </head>
-
 <body>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="brand-logo">HR</div>
+        <span>HR Advisor</span>
+      </div>
 
-<header>
-  <div>HR Advisor</div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About Me</a>
-    <a href="expertise.html">Expertise</a>
-    <a href="services.html">Services Offered</a>
-    <a href="blogs.html">Blogs</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About Me</a>
+        <a href="experience.html">Expertise</a>
+        <a href="Services%20Offered.html">Services Offered</a>
+        <a href="#">Blogs</a>
+        <a href="contact.html">Contact</a>
+      </nav>
 
-<div class="container">
-  <div class="about-grid">
-
-    <!-- LEFT SIDE: PHOTO -->
-    <div>
-      <img src="Debashree.jpg" alt="Debashree Bhattacharyya">
+      <div class="nav-phone">
+        +91-XXXXXXXXXX
+      </div>
     </div>
+  </header>
 
-    <!-- RIGHT SIDE: ABOUT ME -->
-    <div>
-      <h1>About Me</h1>
-      <p>
-        Strategic HR Business Partner with experience supporting multi-functional business units across India, US, UK & Canada.
-        Skilled in HR strategy alignment, talent management, performance management, employee relations, workforce planning, 
-        and organizational development.
+  <!-- CONTENT -->
+  <main>
+    <section>
+      <div class="page-eyebrow">About Me</div>
+      <h1>Strategic HR Business Partner</h1>
+
+      <p class="lead">
+        I am an HR Business Partner specialising in strategic people management
+        and global HR operations. I have led end-to-end employee lifecycle
+        processes, onboarding, policy design, and payroll across India, the USA
+        and Canada, with a focus on building practical, people-first HR systems.
       </p>
-      <p>
-        Partnered with business leaders to drive productivity, resolve complex ER issues, lead HR transformation initiatives, 
-        and implement scalable people practices. Strong analytical capability with proven expertise in HR metrics, policy 
-        governance, and employee experience.
-      </p>
-    </div>
 
-  </div>
-</div>
+      <div class="pill-row">
+        <span class="pill">HR Business Partnering</span>
+        <span class="pill">Global HR Operations</span>
+        <span class="pill">Payroll – India / US / Canada</span>
+        <span class="pill">HR Systems &amp; Automation</span>
+        <span class="pill">Employee Experience</span>
+      </div>
 
+      <div class="section">
+        <div class="section-title">How I Work</div>
+        <p class="section-text">
+          My approach blends strategic partnership with hands-on execution. I
+          enjoy understanding business goals, translating them into HR
+          initiatives, and building simple processes that teams actually use.
+          Whether it is scaling a growing organisation, stabilising operations,
+          or improving compliance, I focus on solutions that are structured,
+          transparent and people-centric.
+        </p>
+
+        <div class="section-title">What I Care About</div>
+        <p class="section-text">
+          I care deeply about creating workplaces where people feel respected,
+          informed and supported. That means clear policies, predictable
+          processes, fair pay practices, and managers who are equipped to lead
+          with clarity and empathy.
+        </p>
+      </div>
+    </section>
+
+    <aside class="card">
+      <h2>Snapshot</h2>
+      <ul>
+        <li>Experience across India, US and Canada HR operations.</li>
+        <li>End-to-end ownership of employee lifecycle and HR operations.</li>
+        <li>Hands-on work with HRMS platforms and payroll systems.</li>
+        <li>Comfortable working with startups, scale-ups and global teams.</li>
+      </ul>
+    </aside>
+  </main>
+
+  <footer>
+    ©
+    <script>
+      document.write(new Date().getFullYear());
+    </script>
+    Debashree Bhattacharyya · HR Advisor
+  </footer>
 </body>
 </html>
