@@ -27,83 +27,75 @@
     }
 
     body {
-      font-family: "Lato", system-ui, -apple-system, BlinkMacSystemFont,
-        "Segoe UI", sans-serif;
+      font-family: "Lato", sans-serif;
       background: var(--bg);
       color: var(--text);
     }
 
-    /* NAVBAR – same style as Home/About */
     .navbar {
+      background: #ffffff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
       position: sticky;
       top: 0;
-      z-index: 100;
-      background: #ffffff;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      z-index: 50;
     }
+
     .nav-inner {
       max-width: 1180px;
-      margin: 0 auto;
+      margin: auto;
       padding: 0.75rem 1.5rem;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 1rem;
+      align-items: center;
     }
+
     .brand {
       display: flex;
       align-items: center;
       gap: 0.6rem;
       font-weight: 700;
-      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--text);
     }
+
     .brand-logo {
       width: 34px;
       height: 34px;
       border-radius: 10px;
       border: 2px solid var(--primary);
+      color: var(--primary);
+      font-size: 0.7rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.7rem;
-      font-weight: 700;
-      color: var(--primary);
     }
+
     .nav-links {
       display: flex;
-      align-items: center;
       gap: 1.25rem;
       font-size: 0.9rem;
+      font-weight: 600;
+      text-transform: uppercase;
     }
+
     .nav-links a {
       text-decoration: none;
       color: var(--muted);
-      text-transform: uppercase;
-      font-weight: 600;
-      letter-spacing: 0.08em;
       padding-bottom: 2px;
       border-bottom: 2px solid transparent;
     }
+
     .nav-links a:hover,
     .nav-links a.active {
       color: var(--primary);
       border-bottom-color: var(--primary);
     }
-    .nav-phone {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--primary);
-      white-space: nowrap;
-    }
 
-    /* PAGE LAYOUT */
     main {
       max-width: 1180px;
-      margin: 0 auto;
+      margin: auto;
       padding: 3rem 1.5rem 3.5rem;
     }
+
     .page-eyebrow {
       text-transform: uppercase;
       font-size: 0.8rem;
@@ -112,79 +104,80 @@
       color: var(--primary);
       margin-bottom: 0.75rem;
     }
+
     h1 {
       font-size: 2.2rem;
-      margin-bottom: 0.75rem;
+      margin-bottom: 1rem;
     }
+
     .lead {
       font-size: 1rem;
       line-height: 1.7;
       color: var(--muted);
-      max-width: 40rem;
+      max-width: 650px;
       margin-bottom: 2rem;
     }
 
-    /* Accordion cards */
     .accordion {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(2,1fr);
       gap: 1.4rem;
     }
+
     details {
       background: var(--card);
-      border-radius: 14px;
-      padding: 1rem 1.25rem;
-      box-shadow: 0 14px 32px rgba(15, 40, 80, 0.12);
+      border-radius: 15px;
+      padding: 1rem 1.2rem;
+      box-shadow: 0 14px 32px rgba(15,40,80,0.12);
     }
+
     summary {
-      list-style: none;
-      cursor: pointer;
+      font-size: 1rem;
       font-weight: 700;
-      font-size: 0.98rem;
+      cursor: pointer;
+      list-style: none;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    summary::-webkit-details-marker {
-      display: none;
-    }
-    .summary-label {
-      flex: 1;
-      margin-right: 0.75rem;
-    }
+
     .summary-icon {
-      font-size: 1.1rem;
       color: var(--primary);
-      transition: transform 0.15s ease;
+      font-size: 1.2rem;
+      transition: 0.2s ease;
     }
+
     details[open] .summary-icon {
       transform: rotate(90deg);
     }
+
     .acc-body {
-      margin-top: 0.7rem;
-      font-size: 0.9rem;
-      line-height: 1.7;
+      margin-top: 0.75rem;
+      font-size: 0.92rem;
       color: var(--muted);
+      line-height: 1.7;
     }
+
     .pill-row {
+      margin-top: 0.6rem;
       display: flex;
       flex-wrap: wrap;
-      gap: 0.35rem;
-      margin-top: 0.5rem;
+      gap: 0.4rem;
     }
+
     .pill {
-      font-size: 0.75rem;
-      padding: 0.2rem 0.65rem;
+      padding: 0.25rem 0.65rem;
       border-radius: 999px;
-      border: 1px solid rgba(0, 119, 182, 0.25);
-      background: rgba(0, 119, 182, 0.04);
+      background: rgba(0,119,182,0.05);
+      border: 1px solid rgba(0,119,182,0.25);
+      font-size: 0.75rem;
       color: var(--primary-dark);
     }
 
     footer {
       padding: 1.5rem;
       text-align: center;
-      font-size: 0.82rem;
+      font-size: 0.85rem;
       color: var(--muted);
     }
 
@@ -193,19 +186,10 @@
         grid-template-columns: 1fr;
       }
     }
-    @media (max-width: 720px) {
-      .nav-inner {
-        flex-wrap: wrap;
-      }
-      .nav-links {
-        flex-wrap: wrap;
-        justify-content: flex-end;
-      }
-    }
   </style>
 </head>
 <body>
-  <!-- NAVBAR -->
+
   <header class="navbar">
     <div class="nav-inner">
       <div class="brand">
@@ -217,140 +201,121 @@
         <a href="/">Home</a>
         <a href="/about.html">About Me</a>
         <a href="/experience.html">Expertise</a>
-        <a href="/Services%20Offered.html" class="active">How I Can Help</a>
+        <a href="/How%20I%20Can%20Help.html" class="active">How I Can Help</a>
         <a href="#">Blogs</a>
         <a href="/contact.html">Contact</a>
       </nav>
-
-      <div class="nav-phone">
-        +91-XXXXXXXXXX
-      </div>
     </div>
   </header>
 
-  <!-- CONTENT -->
   <main>
     <div class="page-eyebrow">How I Can Help</div>
-    <h1>Ways I Support People &amp; Organisations</h1>
+    <h1>Ways I Support People & Organisations</h1>
 
     <p class="lead">
-      I collaborate with organisations and HR teams to strengthen their people
-      practices. These are some of the areas where I can contribute. Depending
-      on your context, the support can be advisory, project-based or hands-on.
+      I partner with organisations, founders and HR teams to strengthen their people practices.
+      Depending on what you need, this support can be advisory, project-based or hands-on.
     </p>
 
-    <section class="accordion">
+    <div class="accordion">
+
       <details>
         <summary>
-          <span class="summary-label">Recruitment &amp; Hiring Support</span>
+          Recruitment &amp; Hiring Support
           <span class="summary-icon">➜</span>
         </summary>
         <div class="acc-body">
-          Support with structuring and running hiring processes – from role
-          definition and screening to interviews and offer closure. I am
-          particularly interested in opportunities for women returning to work
-          and people impacted by organisational restructuring.
+          Structured hiring support—from role clarity to shortlisting and offer coordination.
           <div class="pill-row">
             <span class="pill">Role definition</span>
-            <span class="pill">Screening &amp; interviews</span>
-            <span class="pill">Offer coordination</span>
+            <span class="pill">Screening</span>
+            <span class="pill">Interview support</span>
           </div>
         </div>
       </details>
 
       <details>
         <summary>
-          <span class="summary-label">HR Policies, SOPs &amp; Handbooks</span>
+          HR Policies, SOPs &amp; Handbooks
           <span class="summary-icon">➜</span>
         </summary>
         <div class="acc-body">
-          Drafting or refining HR policies, SOPs and employee handbooks so that
-          expectations are clear and consistently communicated. The focus is on
-          making policies practical and easy to understand.
+          Creating clear, practical people policies that employees can easily understand.
           <div class="pill-row">
             <span class="pill">Policy drafting</span>
-            <span class="pill">Process mapping</span>
-            <span class="pill">Employee handbook</span>
+            <span class="pill">SOP creation</span>
+            <span class="pill">Handbook writing</span>
           </div>
         </div>
       </details>
 
       <details>
         <summary>
-          <span class="summary-label">HRMS / HCM Implementation</span>
+          HRMS / HCM Implementation
           <span class="summary-icon">➜</span>
         </summary>
         <div class="acc-body">
-          Helping teams select, configure and roll out HR systems – with an
-          emphasis on clean data, simple workflows and reducing manual work for
-          HR, managers and employees.
+          Helping teams select and implement HR systems that reduce manual work.
           <div class="pill-row">
-            <span class="pill">Requirement gathering</span>
-            <span class="pill">System configuration</span>
-            <span class="pill">Workflow design</span>
+            <span class="pill">Requirements</span>
+            <span class="pill">Configuration</span>
+            <span class="pill">Automation</span>
           </div>
         </div>
       </details>
 
       <details>
         <summary>
-          <span class="summary-label">Performance &amp; Feedback Practices</span>
+          Performance &amp; Feedback Practices
           <span class="summary-icon">➜</span>
         </summary>
         <div class="acc-body">
-          Designing or refining performance review cycles, feedback touchpoints
-          and goal-setting approaches so that expectations are clear and
-          conversations are structured.
+          Structuring simple performance cycles and feedback routines.
           <div class="pill-row">
-            <span class="pill">Goal setting</span>
+            <span class="pill">Goal-setting</span>
             <span class="pill">Review cycles</span>
-            <span class="pill">Manager support</span>
+            <span class="pill">Manager guidance</span>
           </div>
         </div>
       </details>
 
       <details>
         <summary>
-          <span class="summary-label">Inclusion, Diversity &amp; Safe Workplaces</span>
+          Inclusion, Diversity &amp; Safe Workplaces
           <span class="summary-icon">➜</span>
         </summary>
         <div class="acc-body">
-          Supporting initiatives that encourage inclusive, respectful
-          workplaces – such as awareness sessions, communication guidelines and
-          simple frameworks around behaviour and dignity at work.
+          Encouraging workplace respect, safety and awareness through light frameworks.
           <div class="pill-row">
             <span class="pill">Inclusion</span>
-            <span class="pill">Workplace behaviour</span>
-            <span class="pill">Awareness sessions</span>
+            <span class="pill">Behaviour</span>
+            <span class="pill">Awareness</span>
           </div>
         </div>
       </details>
 
       <details>
         <summary>
-          <span class="summary-label">HR Operations &amp; Employee Experience</span>
+          HR Operations &amp; Employee Experience
           <span class="summary-icon">➜</span>
         </summary>
         <div class="acc-body">
-          Strengthening day-to-day HR operations such as onboarding,
-          documentation, query handling and communication so that employees have
-          a smooth and predictable experience throughout their journey.
+          Improving onboarding, documentation and everyday HR interactions.
           <div class="pill-row">
-            <span class="pill">Onboarding journeys</span>
+            <span class="pill">Onboarding</span>
             <span class="pill">Employee queries</span>
             <span class="pill">Process clean-up</span>
           </div>
         </div>
       </details>
-    </section>
+
+    </div>
   </main>
 
   <footer>
-    ©
-    <script>
-      document.write(new Date().getFullYear());
-    </script>
+    © <script>document.write(new Date().getFullYear());</script>
     Debashree Bhattacharyya · HR Advisor
   </footer>
+
 </body>
 </html>
