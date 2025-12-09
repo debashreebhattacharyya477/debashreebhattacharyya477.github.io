@@ -2,63 +2,304 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Home | Debashree Bhattacharyya</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Debashree Bhattacharyya | HR Advisor</title>
+
+  <!-- Google Font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
+    :root {
+      --primary: #0077b6;
+      --primary-dark: #005f8d;
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --text: #11223a;
+      --muted: #6b7a90;
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
-      color: #222;
+      padding: 0;
     }
-    header {
+
+    body {
+      font-family: "Lato", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    /* NAVBAR */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
       background: #ffffff;
-      border-bottom: 1px solid #ddd;
-      padding: 12px 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     }
-    nav a {
-      margin-right: 16px;
-      text-decoration: none;
+
+    .nav-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      font-size: 13px;
-      color: #555;
+      color: var(--text);
+    }
+
+    .brand-logo {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      border: 2px solid var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      text-transform: uppercase;
       font-weight: 600;
-    }
-    nav a.active {
-      color: #0077b6;
-      border-bottom: 2px solid #0077b6;
+      letter-spacing: 0.08em;
       padding-bottom: 2px;
+      border-bottom: 2px solid transparent;
     }
-    main {
-      padding: 30px 20px;
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
     }
-    h1 {
-      margin-bottom: 10px;
+
+    .nav-phone {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--primary);
+      white-space: nowrap;
     }
-    p {
-      max-width: 600px;
-      line-height: 1.6;
+
+    /* HERO SECTION */
+    .hero {
+      background: linear-gradient(
+        90deg,
+        #ffffff 0%,
+        #ffffff 55%,
+        #e4f3ff 100%
+      );
+      padding: 3.5rem 1.5rem 3.75rem;
+    }
+
+    .hero-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 2.75rem;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title {
+      font-size: 2.6rem;
+      line-height: 1.15;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 2rem;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-text {
+      font-size: 0.97rem;
+      line-height: 1.7;
+      color: var(--muted);
+      max-width: 34rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero-btn {
+      display: inline-block;
+      padding: 0.75rem 1.8rem;
+      background: var(--primary);
+      color: #ffffff;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 10px 20px rgba(0, 119, 182, 0.25);
+      transition: transform 0.15s ease, box-shadow 0.15s ease,
+        background 0.15s ease;
+    }
+
+    .hero-btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 14px 26px rgba(0, 119, 182, 0.32);
+    }
+
+    .hero-image-card {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: 0 22px 45px rgba(15, 40, 80, 0.14);
+    }
+
+    .hero-image-card img {
+      width: 100%;
+      display: block;
+      border-radius: 12px;
+    }
+
+    .hero-image-caption {
+      margin-top: 0.75rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+      font-weight: 600;
+      text-align: center;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        background: #ffffff;
+        padding-top: 2.75rem;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-inner {
+        flex-wrap: wrap;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      .hero-title {
+        font-size: 2.2rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.6rem;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="/" class="active">Home</a>
-      <a href="/about.html">About Me</a>
-      <a href="/experience.html">Expertise</a>
-      <a href="/How%20I%20Can%20Help.html">How I Can Help</a>
-      <a href="#">Blogs</a>
-      <a href="/contact.html">Contact</a>
-    </nav>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="brand-logo">HR</div>
+        <span>HR Advisor</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="experience.html">Expertise</a>
+        <a href="How%20I%20Can%20Help.html">How I Can Help</a>
+        <a href="#">Blogs</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-phone">
+        +91-XXXXXXXXXX
+      </div>
+    </div>
   </header>
 
-  <main>
-    <h1>Home – Debashree Bhattacharyya</h1>
-    <p>
-      This is the temporary home page added to make sure everything is working.
-      The navigation above should now show "How I Can Help" instead of "Services Offered".
-    </p>
-  </main>
+  <!-- HERO / HOME SECTION -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <div class="hero-eyebrow">Expert Knowledge</div>
+
+        <h1 class="hero-title">Transforming</h1>
+        <h2 class="hero-subtitle">The Work Place</h2>
+
+        <p class="hero-text">
+          Strategic HR partner focused on building practical, people-first HR
+          systems, global HR operations and meaningful employee experiences.
+        </p>
+
+        <a href="about.html" class="hero-btn">More Info</a>
+      </div>
+
+      <div class="hero-image-card">
+        <!-- Make sure HR.jpg exists in your repo (it already did earlier) -->
+        <img src="HR.jpg" alt="Human Resources illustration" />
+        <div class="hero-image-caption">
+          Human Resources · People · Culture
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    ©
+    <script>
+      document.write(new Date().getFullYear());
+    </script>
+    Debashree Bhattacharyya · HR Advisor
+  </footer>
 </body>
 </html>
