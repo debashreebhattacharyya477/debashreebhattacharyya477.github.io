@@ -2,320 +2,71 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>How I Can Help | Debashree Bhattacharyya</title>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700&display=swap"
-    rel="stylesheet"
-  />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-    :root {
-      --primary: #0077b6;
-      --primary-dark: #005f8d;
-      --bg: #f4f7fb;
-      --card: #ffffff;
-      --text: #11223a;
-      --muted: #6b7a90;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
-      font-family: "Lato", sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      color: #222;
     }
-
-    .navbar {
+    header {
       background: #ffffff;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      position: sticky;
-      top: 0;
-      z-index: 50;
+      border-bottom: 1px solid #ddd;
+      padding: 12px 20px;
     }
-
-    .nav-inner {
-      max-width: 1180px;
-      margin: auto;
-      padding: 0.75rem 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-weight: 700;
-      text-transform: uppercase;
-    }
-
-    .brand-logo {
-      width: 34px;
-      height: 34px;
-      border-radius: 10px;
-      border: 2px solid var(--primary);
-      color: var(--primary);
-      font-size: 0.7rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1.25rem;
-      font-size: 0.9rem;
-      font-weight: 600;
-      text-transform: uppercase;
-    }
-
-    .nav-links a {
+    nav a {
+      margin-right: 16px;
       text-decoration: none;
-      color: var(--muted);
-      padding-bottom: 2px;
-      border-bottom: 2px solid transparent;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--primary);
-      border-bottom-color: var(--primary);
-    }
-
-    main {
-      max-width: 1180px;
-      margin: auto;
-      padding: 3rem 1.5rem 3.5rem;
-    }
-
-    .page-eyebrow {
       text-transform: uppercase;
-      font-size: 0.8rem;
-      letter-spacing: 0.18em;
-      font-weight: 700;
-      color: var(--primary);
-      margin-bottom: 0.75rem;
+      font-size: 13px;
+      color: #555;
+      font-weight: 600;
     }
-
+    nav a.active {
+      color: #0077b6;
+      border-bottom: 2px solid #0077b6;
+      padding-bottom: 2px;
+    }
+    main {
+      padding: 30px 20px;
+    }
     h1 {
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
+      margin-bottom: 10px;
     }
-
-    .lead {
-      font-size: 1rem;
-      line-height: 1.7;
-      color: var(--muted);
+    p, ul {
       max-width: 650px;
-      margin-bottom: 2rem;
-    }
-
-    .accordion {
-      display: grid;
-      grid-template-columns: repeat(2,1fr);
-      gap: 1.4rem;
-    }
-
-    details {
-      background: var(--card);
-      border-radius: 15px;
-      padding: 1rem 1.2rem;
-      box-shadow: 0 14px 32px rgba(15,40,80,0.12);
-    }
-
-    summary {
-      font-size: 1rem;
-      font-weight: 700;
-      cursor: pointer;
-      list-style: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .summary-icon {
-      color: var(--primary);
-      font-size: 1.2rem;
-      transition: 0.2s ease;
-    }
-
-    details[open] .summary-icon {
-      transform: rotate(90deg);
-    }
-
-    .acc-body {
-      margin-top: 0.75rem;
-      font-size: 0.92rem;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .pill-row {
-      margin-top: 0.6rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-    }
-
-    .pill {
-      padding: 0.25rem 0.65rem;
-      border-radius: 999px;
-      background: rgba(0,119,182,0.05);
-      border: 1px solid rgba(0,119,182,0.25);
-      font-size: 0.75rem;
-      color: var(--primary-dark);
-    }
-
-    footer {
-      padding: 1.5rem;
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-
-    @media (max-width: 900px) {
-      .accordion {
-        grid-template-columns: 1fr;
-      }
+      line-height: 1.6;
     }
   </style>
 </head>
 <body>
-
-  <header class="navbar">
-    <div class="nav-inner">
-      <div class="brand">
-        <div class="brand-logo">HR</div>
-        <span>HR Advisor</span>
-      </div>
-
-      <nav class="nav-links">
-        <a href="/">Home</a>
-        <a href="/about.html">About Me</a>
-        <a href="/experience.html">Expertise</a>
-        <a href="/How%20I%20Can%20Help.html" class="active">How I Can Help</a>
-        <a href="#">Blogs</a>
-        <a href="/contact.html">Contact</a>
-      </nav>
-    </div>
+  <header>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about.html">About Me</a>
+      <a href="/experience.html">Expertise</a>
+      <a href="/How%20I%20Can%20Help.html" class="active">How I Can Help</a>
+      <a href="#">Blogs</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
   </header>
 
   <main>
-    <div class="page-eyebrow">How I Can Help</div>
-    <h1>Ways I Support People & Organisations</h1>
-
-    <p class="lead">
-      I partner with organisations, founders and HR teams to strengthen their people practices.
-      Depending on what you need, this support can be advisory, project-based or hands-on.
+    <h1>How I Can Help</h1>
+    <p>
+      I support organisations and teams with practical HR partnership. Depending on what you need,
+      this support can be advisory, project-based or hands-on execution.
     </p>
-
-    <div class="accordion">
-
-      <details>
-        <summary>
-          Recruitment &amp; Hiring Support
-          <span class="summary-icon">➜</span>
-        </summary>
-        <div class="acc-body">
-          Structured hiring support—from role clarity to shortlisting and offer coordination.
-          <div class="pill-row">
-            <span class="pill">Role definition</span>
-            <span class="pill">Screening</span>
-            <span class="pill">Interview support</span>
-          </div>
-        </div>
-      </details>
-
-      <details>
-        <summary>
-          HR Policies, SOPs &amp; Handbooks
-          <span class="summary-icon">➜</span>
-        </summary>
-        <div class="acc-body">
-          Creating clear, practical people policies that employees can easily understand.
-          <div class="pill-row">
-            <span class="pill">Policy drafting</span>
-            <span class="pill">SOP creation</span>
-            <span class="pill">Handbook writing</span>
-          </div>
-        </div>
-      </details>
-
-      <details>
-        <summary>
-          HRMS / HCM Implementation
-          <span class="summary-icon">➜</span>
-        </summary>
-        <div class="acc-body">
-          Helping teams select and implement HR systems that reduce manual work.
-          <div class="pill-row">
-            <span class="pill">Requirements</span>
-            <span class="pill">Configuration</span>
-            <span class="pill">Automation</span>
-          </div>
-        </div>
-      </details>
-
-      <details>
-        <summary>
-          Performance &amp; Feedback Practices
-          <span class="summary-icon">➜</span>
-        </summary>
-        <div class="acc-body">
-          Structuring simple performance cycles and feedback routines.
-          <div class="pill-row">
-            <span class="pill">Goal-setting</span>
-            <span class="pill">Review cycles</span>
-            <span class="pill">Manager guidance</span>
-          </div>
-        </div>
-      </details>
-
-      <details>
-        <summary>
-          Inclusion, Diversity &amp; Safe Workplaces
-          <span class="summary-icon">➜</span>
-        </summary>
-        <div class="acc-body">
-          Encouraging workplace respect, safety and awareness through light frameworks.
-          <div class="pill-row">
-            <span class="pill">Inclusion</span>
-            <span class="pill">Behaviour</span>
-            <span class="pill">Awareness</span>
-          </div>
-        </div>
-      </details>
-
-      <details>
-        <summary>
-          HR Operations &amp; Employee Experience
-          <span class="summary-icon">➜</span>
-        </summary>
-        <div class="acc-body">
-          Improving onboarding, documentation and everyday HR interactions.
-          <div class="pill-row">
-            <span class="pill">Onboarding</span>
-            <span class="pill">Employee queries</span>
-            <span class="pill">Process clean-up</span>
-          </div>
-        </div>
-      </details>
-
-    </div>
+    <ul>
+      <li>Recruitment and hiring support</li>
+      <li>HR policies, SOPs and handbooks</li>
+      <li>HRMS / HCM implementation and clean-up</li>
+      <li>Performance and feedback practices</li>
+      <li>Inclusion, diversity and safe workplaces</li>
+      <li>HR operations and employee experience</li>
+    </ul>
   </main>
-
-  <footer>
-    © <script>document.write(new Date().getFullYear());</script>
-    Debashree Bhattacharyya · HR Advisor
-  </footer>
-
 </body>
 </html>
