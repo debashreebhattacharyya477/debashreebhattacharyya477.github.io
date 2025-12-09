@@ -21,9 +21,9 @@
     }
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     body {
@@ -33,7 +33,6 @@
       color: var(--text);
     }
 
-    /* NAVBAR */
     .navbar {
       position: sticky;
       top: 0;
@@ -41,6 +40,7 @@
       background: #ffffff;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     }
+
     .nav-inner {
       max-width: 1180px;
       margin: 0 auto;
@@ -50,6 +50,7 @@
       justify-content: space-between;
       gap: 1rem;
     }
+
     .brand {
       display: flex;
       align-items: center;
@@ -57,8 +58,8 @@
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--text);
     }
+
     .brand-logo {
       width: 34px;
       height: 34px;
@@ -68,15 +69,16 @@
       align-items: center;
       justify-content: center;
       font-size: 0.7rem;
-      font-weight: 700;
       color: var(--primary);
     }
+
     .nav-links {
       display: flex;
       align-items: center;
       gap: 1.25rem;
       font-size: 0.9rem;
     }
+
     .nav-links a {
       text-decoration: none;
       color: var(--muted);
@@ -86,19 +88,13 @@
       padding-bottom: 2px;
       border-bottom: 2px solid transparent;
     }
+
     .nav-links a:hover,
     .nav-links a.active {
       color: var(--primary);
       border-bottom-color: var(--primary);
     }
-    .nav-phone {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--primary);
-      white-space: nowrap;
-    }
 
-    /* CONTENT */
     main {
       max-width: 1180px;
       margin: 0 auto;
@@ -136,8 +132,8 @@
     .card {
       background: var(--card);
       border-radius: 16px;
-      padding: 1.4rem 1.5rem 1.5rem;
-      box-shadow: 0 12px 28px rgba(15, 40, 80, 0.12);
+      padding: 1.5rem;
+      box-shadow: 0 14px 32px rgba(15, 40, 80, 0.12);
     }
 
     .card h2 {
@@ -147,18 +143,18 @@
 
     .card p {
       font-size: 0.9rem;
-      line-height: 1.7;
       color: var(--muted);
-      margin-bottom: 0.5rem;
+      line-height: 1.7;
+      margin-bottom: 0.4rem;
     }
 
     .tag {
       display: inline-block;
       margin-top: 0.4rem;
-      padding: 0.2rem 0.7rem;
+      padding: 0.2rem 0.65rem;
       border-radius: 999px;
-      background: rgba(0, 119, 182, 0.05);
       border: 1px solid rgba(0, 119, 182, 0.25);
+      background: rgba(0, 119, 182, 0.04);
       font-size: 0.75rem;
       color: var(--primary-dark);
     }
@@ -176,7 +172,7 @@
       }
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 720px) {
       .nav-inner {
         flex-wrap: wrap;
       }
@@ -191,7 +187,6 @@
   </style>
 </head>
 <body>
-  <!-- NAVBAR -->
   <header class="navbar">
     <div class="nav-inner">
       <div class="brand">
@@ -203,114 +198,71 @@
         <a href="index.html">Home</a>
         <a href="about.html">About Me</a>
         <a href="experience.html" class="active">Expertise</a>
-        <a href="Services%20Offered.html">Services Offered</a>
+        <a href="How%20I%20Can%20Help.html">How I Can Help</a>
         <a href="#">Blogs</a>
         <a href="contact.html">Contact</a>
       </nav>
-
-      <div class="nav-phone">
-        +91-XXXXXXXXXX
-      </div>
     </div>
   </header>
 
-  <!-- CONTENT -->
   <main>
     <div class="page-eyebrow">Expertise</div>
     <h1>What I Bring to the Table</h1>
 
     <p class="lead">
-      My work spans strategic HR business partnering, HR operations, payroll
-      management and HR technology implementation. I am comfortable moving
-      between strategy and execution and partnering with leaders to solve real
-      people problems.
+      My work spans HR business partnering, HR operations, payroll, HR systems
+      and employee experience. I am comfortable moving between strategy and
+      hands-on execution.
     </p>
 
-    <div class="grid">
+    <section class="grid">
       <article class="card">
-        <h2>Strategic HR Business Partnering</h2>
-        <p>
-          Partnering with business leaders to translate goals into people plans:
-          workforce planning, org structure, role clarity and capability
-          requirements.
-        </p>
-        <p>
-          Acting as a sounding board to managers on performance, team dynamics
-          and talent decisions.
-        </p>
+        <h2>HR Business Partnering</h2>
+        <p>Partnering with leaders on org structure, roles and people plans.</p>
+        <p>Helping managers handle performance, team dynamics and growth.</p>
         <span class="tag">People Strategy</span>
       </article>
 
       <article class="card">
         <h2>Global HR Operations</h2>
-        <p>
-          Managing end-to-end HR operations across locations – employee
-          lifecycle, documentation, leaves, benefits and HR data accuracy.
-        </p>
-        <p>
-          Experience working with distributed teams across India, the US and
-          Canada.
-        </p>
+        <p>End-to-end HR operations across locations and time zones.</p>
+        <p>Focusing on predictability, compliance and clear communication.</p>
         <span class="tag">Scalable Processes</span>
       </article>
 
       <article class="card">
-        <h2>Payroll Management</h2>
-        <p>
-          Hands-on experience with payroll for multiple geographies, ensuring
-          compliance with local statutory requirements and accurate, timely
-          payouts.
-        </p>
-        <p>Comfortable working with payroll vendors &amp; platforms.</p>
-        <span class="tag">India · US · Canada</span>
+        <h2>Payroll</h2>
+        <p>Experience with payroll across multiple geographies.</p>
+        <p>Ensuring accurate, timely and compliant payroll cycles.</p>
+        <span class="tag">Payroll Delivery</span>
       </article>
 
       <article class="card">
         <h2>HR Systems &amp; Automation</h2>
-        <p>
-          Implementing and optimising HRMS / HCM platforms to streamline
-          onboarding, workflows, approvals and employee data management.
-        </p>
-        <p>
-          Focused on reducing manual work and improving data visibility for
-          HR and leaders.
-        </p>
-        <span class="tag">HRMS Implementation</span>
+        <p>Implementing and improving HRMS / HCM tools.</p>
+        <p>Reducing manual work and improving HR data quality.</p>
+        <span class="tag">HR Tech</span>
       </article>
 
       <article class="card">
         <h2>Talent Acquisition &amp; Onboarding</h2>
-        <p>
-          Experience across full recruitment lifecycle, from sourcing and
-          screening to selection and offer closure for diverse roles and levels.
-        </p>
-        <p>
-          Designed structured onboarding journeys that create positive first
-          impressions and faster productivity.
-        </p>
+        <p>Supporting recruitment for various roles and levels.</p>
+        <p>Designing onboarding that feels structured and welcoming.</p>
         <span class="tag">Hiring &amp; Onboarding</span>
       </article>
 
       <article class="card">
-        <h2>Policy, Compliance &amp; Employee Relations</h2>
-        <p>
-          Designing clear HR policies, employee handbooks and SOPs that balance
-          compliance with practicality.
-        </p>
-        <p>
-          Supporting managers and employees on day-to-day queries, grievance
-          handling and culture-building practices.
-        </p>
+        <h2>Policy &amp; Employee Experience</h2>
+        <p>Creating practical policies, SOPs and employee communication.</p>
+        <p>Balancing compliance with real-life applicability.</p>
         <span class="tag">Policies &amp; SOPs</span>
       </article>
-    </div>
+    </section>
   </main>
 
   <footer>
     ©
-    <script>
-      document.write(new Date().getFullYear());
-    </script>
+    <script>document.write(new Date().getFullYear());</script>
     Debashree Bhattacharyya · HR Advisor
   </footer>
 </body>
