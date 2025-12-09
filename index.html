@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Debashree Bhattacharyya | HR Advisor</title>
+  <title>About Me | Debashree Bhattacharyya</title>
 
   <!-- Google Font -->
   <link
@@ -34,7 +34,7 @@
       color: var(--text);
     }
 
-    /* NAVBAR */
+    /* NAVBAR – same style as Home */
     .navbar {
       position: sticky;
       top: 0;
@@ -99,34 +99,14 @@
       border-bottom-color: var(--primary);
     }
 
-    .nav-phone {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--primary);
-      white-space: nowrap;
-    }
-
-    /* HERO SECTION */
-    .hero {
-      background: linear-gradient(
-        90deg,
-        #ffffff 0%,
-        #ffffff 55%,
-        #e4f3ff 100%
-      );
-      padding: 3.5rem 1.5rem 3.75rem;
-    }
-
-    .hero-inner {
+    /* PAGE LAYOUT */
+    main {
       max-width: 1180px;
       margin: 0 auto;
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 2.75rem;
-      align-items: center;
+      padding: 3rem 1.5rem 3.5rem;
     }
 
-    .hero-eyebrow {
+    .page-eyebrow {
       text-transform: uppercase;
       font-size: 0.8rem;
       letter-spacing: 0.18em;
@@ -135,75 +115,72 @@
       margin-bottom: 0.75rem;
     }
 
-    .hero-title {
-      font-size: 2.6rem;
-      line-height: 1.15;
-      font-weight: 800;
-      margin-bottom: 0.5rem;
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.75rem;
     }
 
-    .hero-subtitle {
-      font-size: 2rem;
-      line-height: 1.2;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-text {
-      font-size: 0.97rem;
+    .lead {
+      font-size: 1rem;
       line-height: 1.7;
       color: var(--muted);
-      max-width: 34rem;
-      margin-bottom: 2rem;
+      max-width: 40rem;
+      margin-bottom: 1.8rem;
     }
 
-    .hero-btn {
-      display: inline-block;
-      padding: 0.75rem 1.8rem;
-      background: var(--primary);
-      color: #ffffff;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 0.95rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 10px 20px rgba(0, 119, 182, 0.25);
-      transition: transform 0.15s ease, box-shadow 0.15s ease,
-        background 0.15s ease;
-    }
-
-    .hero-btn:hover {
-      background: var(--primary-dark);
-      transform: translateY(-1px);
-      box-shadow: 0 14px 26px rgba(0, 119, 182, 0.32);
-    }
-
-    .hero-image-card {
+    .about-card {
       background: var(--card);
       border-radius: 16px;
-      padding: 1.5rem;
-      box-shadow: 0 22px 45px rgba(15, 40, 80, 0.14);
+      box-shadow: 0 22px 45px rgba(15, 40, 80, 0.12);
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 2rem;
+      align-items: flex-start;
     }
 
-    .hero-image-card img {
-      width: 100%;
-      display: block;
-      border-radius: 12px;
-    }
-
-    .hero-image-caption {
-      margin-top: 0.75rem;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
+    .about-main p {
+      font-size: 0.95rem;
+      line-height: 1.8;
       color: var(--muted);
-      font-weight: 600;
-      text-align: center;
+      margin-bottom: 0.9rem;
     }
 
-    /* FOOTER */
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+
+    .pill {
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid rgba(0, 119, 182, 0.2);
+      background: rgba(0, 119, 182, 0.04);
+      font-size: 0.8rem;
+      color: var(--primary-dark);
+    }
+
+    .side-card-title {
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+
+    .side-list {
+      list-style: none;
+      padding-left: 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .side-list li::before {
+      content: "• ";
+      color: var(--primary);
+    }
+
     footer {
       padding: 1.5rem;
       text-align: center;
@@ -211,15 +188,9 @@
       color: var(--muted);
     }
 
-    /* RESPONSIVE */
     @media (max-width: 900px) {
-      .hero-inner {
+      .about-card {
         grid-template-columns: 1fr;
-      }
-
-      .hero {
-        background: #ffffff;
-        padding-top: 2.75rem;
       }
     }
 
@@ -227,18 +198,9 @@
       .nav-inner {
         flex-wrap: wrap;
       }
-
       .nav-links {
         flex-wrap: wrap;
         justify-content: flex-end;
-      }
-
-      .hero-title {
-        font-size: 2.2rem;
-      }
-
-      .hero-subtitle {
-        font-size: 1.6rem;
       }
     }
   </style>
@@ -253,46 +215,62 @@
       </div>
 
       <nav class="nav-links">
-        <a href="index.html" class="active">Home</a>
-        <a href="about.html">About Me</a>
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About Me</a>
         <a href="experience.html">Expertise</a>
         <a href="How%20I%20Can%20Help.html">How I Can Help</a>
         <a href="#">Blogs</a>
         <a href="contact.html">Contact</a>
       </nav>
-
-      <div class="nav-phone">
-        +91-XXXXXXXXXX
-      </div>
     </div>
   </header>
 
-  <!-- HERO / HOME SECTION -->
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-copy">
-        <div class="hero-eyebrow">Expert Knowledge</div>
+  <!-- ABOUT CONTENT -->
+  <main>
+    <div class="page-eyebrow">About Me</div>
+    <h1>Strategic HR Business Partner</h1>
 
-        <h1 class="hero-title">Transforming</h1>
-        <h2 class="hero-subtitle">The Work Place</h2>
+    <p class="lead">
+      I work as an HR Business Partner focusing on strategic people management
+      and global HR operations across India and international locations. My work
+      combines HR fundamentals with practical judgement to support both people
+      and business needs.
+    </p>
 
-        <p class="hero-text">
-          Strategic HR partner focused on building practical, people-first HR
-          systems, global HR operations and meaningful employee experiences.
+    <section class="about-card">
+      <div class="about-main">
+        <p>
+          Over the years, I have worked across the employee lifecycle:
+          onboarding, HR operations, policy design, payroll, performance and
+          employee experience. I enjoy turning messy, manual processes into
+          simple and structured workflows that teams can actually follow.
+        </p>
+        <p>
+          I am comfortable partnering with leaders, managers and employees –
+          listening to what is really happening on the ground, and then shaping
+          HR practices that are fair, transparent and sustainable.
         </p>
 
-        <a href="about.html" class="hero-btn">More Info</a>
-      </div>
-
-      <div class="hero-image-card">
-        <!-- Make sure HR.jpg exists in your repo (it already did earlier) -->
-        <img src="HR.jpg" alt="Human Resources illustration" />
-        <div class="hero-image-caption">
-          Human Resources · People · Culture
+        <div class="pill-row">
+          <span class="pill">HR Business Partnering</span>
+          <span class="pill">Global HR Operations</span>
+          <span class="pill">Payroll</span>
+          <span class="pill">HR Systems &amp; Automation</span>
+          <span class="pill">Employee Experience</span>
         </div>
       </div>
-    </div>
-  </section>
+
+      <aside>
+        <div class="side-card-title">In Short</div>
+        <ul class="side-list">
+          <li>Experience across India, US, UK and Canada HR operations.</li>
+          <li>End-to-end ownership of HR processes and employee lifecycle.</li>
+          <li>Hands-on work with HRMS / HCM tools and payroll platforms.</li>
+          <li>Comfortable in both start-up and established environments.</li>
+        </ul>
+      </aside>
+    </section>
+  </main>
 
   <footer>
     ©
