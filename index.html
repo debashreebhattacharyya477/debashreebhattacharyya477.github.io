@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Me | Debashree Bhattacharyya</title>
+  <title>Contact | Debashree Bhattacharyya</title>
 
-  <!-- Google Font -->
   <link
     href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700&display=swap"
     rel="stylesheet"
@@ -21,26 +20,20 @@
       --muted: #6b7a90;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      font-family: "Lato", system-ui, -apple-system, BlinkMacSystemFont,
-        "Segoe UI", sans-serif;
+      font-family: "Lato", sans-serif;
       background: var(--bg);
       color: var(--text);
     }
 
-    /* NAVBAR – same style as Home */
     .navbar {
       position: sticky;
       top: 0;
-      z-index: 100;
-      background: #ffffff;
+      background: #fff;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      z-index: 100;
     }
 
     .nav-inner {
@@ -50,7 +43,6 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1rem;
     }
 
     .brand {
@@ -60,7 +52,6 @@
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--text);
     }
 
     .brand-logo {
@@ -72,13 +63,12 @@
       align-items: center;
       justify-content: center;
       font-size: 0.7rem;
-      font-weight: 700;
       color: var(--primary);
+      font-weight: 700;
     }
 
     .nav-links {
       display: flex;
-      align-items: center;
       gap: 1.25rem;
       font-size: 0.9rem;
     }
@@ -99,11 +89,13 @@
       border-bottom-color: var(--primary);
     }
 
-    /* PAGE LAYOUT */
     main {
       max-width: 1180px;
       margin: 0 auto;
       padding: 3rem 1.5rem 3.5rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 2.5rem;
     }
 
     .page-eyebrow {
@@ -115,96 +107,51 @@
       margin-bottom: 0.75rem;
     }
 
-    h1 {
-      font-size: 2.2rem;
-      margin-bottom: 0.75rem;
-    }
+    h1 { font-size: 2.1rem; margin-bottom: 0.8rem; }
 
     .lead {
       font-size: 1rem;
-      line-height: 1.7;
       color: var(--muted);
-      max-width: 40rem;
-      margin-bottom: 1.8rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
     }
 
-    .about-card {
+    .contact-card {
       background: var(--card);
+      padding: 1.8rem;
       border-radius: 16px;
-      box-shadow: 0 22px 45px rgba(15, 40, 80, 0.12);
-      padding: 2rem;
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-      gap: 2rem;
-      align-items: flex-start;
-    }
-
-    .about-main p {
+      box-shadow: 0 16px 32px rgba(15, 40, 80, 0.12);
       font-size: 0.95rem;
-      line-height: 1.8;
-      color: var(--muted);
-      margin-bottom: 0.9rem;
-    }
-
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 0.75rem;
-    }
-
-    .pill {
-      padding: 0.3rem 0.8rem;
-      border-radius: 999px;
-      border: 1px solid rgba(0, 119, 182, 0.2);
-      background: rgba(0, 119, 182, 0.04);
-      font-size: 0.8rem;
-      color: var(--primary-dark);
-    }
-
-    .side-card-title {
-      font-size: 1.05rem;
-      margin-bottom: 0.5rem;
-      font-weight: 700;
-    }
-
-    .side-list {
-      list-style: none;
-      padding-left: 0;
-      font-size: 0.9rem;
-      color: var(--muted);
       line-height: 1.7;
+      color: var(--muted);
     }
 
-    .side-list li::before {
-      content: "• ";
-      color: var(--primary);
+    .contact-card strong { color: var(--text); }
+
+    .email-box {
+      margin-top: 1rem;
+      padding: 0.75rem 1rem;
+      border-radius: 12px;
+      background: rgba(0, 119, 182, 0.05);
+      border: 1px solid rgba(0, 119, 182, 0.2);
+      color: var(--primary-dark);
+      font-size: 0.9rem;
+      font-weight: 600;
     }
 
     footer {
-      padding: 1.5rem;
       text-align: center;
-      font-size: 0.82rem;
+      padding: 1.5rem;
       color: var(--muted);
+      font-size: 0.82rem;
     }
 
     @media (max-width: 900px) {
-      .about-card {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 720px) {
-      .nav-inner {
-        flex-wrap: wrap;
-      }
-      .nav-links {
-        flex-wrap: wrap;
-        justify-content: flex-end;
-      }
+      main { grid-template-columns: 1fr; }
     }
   </style>
 </head>
+
 <body>
   <!-- NAVBAR -->
   <header class="navbar">
@@ -216,67 +163,49 @@
 
       <nav class="nav-links">
         <a href="index.html">Home</a>
-        <a href="about.html" class="active">About Me</a>
+        <a href="about.html">About Me</a>
         <a href="experience.html">Expertise</a>
         <a href="How%20I%20Can%20Help.html">How I Can Help</a>
         <a href="#">Blogs</a>
-        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="active">Contact</a>
       </nav>
     </div>
   </header>
 
-  <!-- ABOUT CONTENT -->
+  <!-- CONTACT PAGE CONTENT -->
   <main>
-    <div class="page-eyebrow">About Me</div>
-    <h1>Strategic HR Business Partner</h1>
+    <section>
+      <div class="page-eyebrow">Contact</div>
+      <h1>Let’s Connect</h1>
 
-    <p class="lead">
-      I work as an HR Business Partner focusing on strategic people management
-      and global HR operations across India and international locations. My work
-      combines HR fundamentals with practical judgement to support both people
-      and business needs.
-    </p>
+      <p class="lead">
+        If you’d like to discuss HR operations, HRBP support, policy design, HR systems,
+        or anything related to people & processes — feel free to reach out directly.
+      </p>
 
-    <section class="about-card">
-      <div class="about-main">
-        <p>
-          Over the years, I have worked across the employee lifecycle:
-          onboarding, HR operations, policy design, payroll, performance and
-          employee experience. I enjoy turning messy, manual processes into
-          simple and structured workflows that teams can actually follow.
-        </p>
-        <p>
-          I am comfortable partnering with leaders, managers and employees –
-          listening to what is really happening on the ground, and then shaping
-          HR practices that are fair, transparent and sustainable.
-        </p>
-
-        <div class="pill-row">
-          <span class="pill">HR Business Partnering</span>
-          <span class="pill">Global HR Operations</span>
-          <span class="pill">Payroll</span>
-          <span class="pill">HR Systems &amp; Automation</span>
-          <span class="pill">Employee Experience</span>
+      <div class="contact-card">
+        <p><strong>Email:</strong></p>
+        <div class="email-box">
+          <a href="mailto:debashreebhattacharyya477@gmail.com">
+            debashreebhattacharyya477@gmail.com
+          </a>
         </div>
-      </div>
 
-      <aside>
-        <div class="side-card-title">In Short</div>
-        <ul class="side-list">
-          <li>Experience across India, US, UK and Canada HR operations.</li>
-          <li>End-to-end ownership of HR processes and employee lifecycle.</li>
-          <li>Hands-on work with HRMS / HCM tools and payroll platforms.</li>
-          <li>Comfortable in both start-up and established environments.</li>
-        </ul>
-      </aside>
+        <p style="margin-top:1.2rem;">
+          <strong>Location:</strong> India (working with global teams)
+        </p>
+
+        <p style="margin-top:0.5rem;">
+          <strong>Areas I support:</strong>
+          HR operations, HRBP work, payroll, onboarding, HRMS implementation, policies,
+          and employee experience.
+        </p>
+      </div>
     </section>
   </main>
 
   <footer>
-    ©
-    <script>
-      document.write(new Date().getFullYear());
-    </script>
+    © <script>document.write(new Date().getFullYear());</script>
     Debashree Bhattacharyya · HR Advisor
   </footer>
 </body>
